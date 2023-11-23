@@ -1,0 +1,239 @@
+.page-model {
+
+    .page-breadcrumb {
+        padding-top: 16px;
+    }
+
+    .section-profile {
+        padding-top: 0;
+    }
+
+    .section-news {
+        padding: 56px 0;
+    }
+
+    .section-gallery {
+        padding: 32px 0;
+
+        .gallery-title {
+            @include display-2();
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gallery-tab {
+            .tabs-item {
+                gap: 24px;
+            }
+        }
+
+        #btn_gallery_load_more {
+            display: none;
+            text-align: center;
+            padding: 12px 24px;
+            margin-top: 16px;
+        }
+
+        .grid-photo {
+            .grid-item {
+                &.last-item-row {
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+    .section-related-models {
+        padding-top: 32px;
+    }
+
+    .section-request-hiring {
+        display: none;
+        position: sticky;
+        bottom: 0;
+        background-color: $white;
+        padding: 16px 0 32px 0;
+
+        & > * {
+            gap: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn.call,
+        .btn-primary{
+            flex: 1;
+        }
+
+        .btn-icon {
+            flex: none;
+            width: 48px;
+            height: 48px;
+            border: 1px solid $primary !important;
+
+            i::before {
+                line-height: 48px;
+            }
+
+            &.btn-trash {
+                color: $danger;
+            }
+
+        }
+
+    }
+
+    // responsive   768 up
+    @media screen and (min-width: 768px) {
+        .section-skills {
+            padding: 56px 0;
+
+            .tabs {
+
+                .tabs-contents {
+
+                    .tab-content-item {
+                        align-items: center;
+                        padding: 16px 0;
+                    }
+
+                    .skills-title {
+                        display: block;
+                        flex: 0 0 auto;
+                        width: 25%;
+                        @include display-5(500);
+                        text-align: center;
+                    }
+
+                    .skills-description {
+                        flex: auto;
+                        @include title-1();
+                    }
+
+                }
+
+            }
+
+        }
+    }
+
+    // responsive -- 576
+    @media screen and (max-width: 576px) {
+
+        #content {
+            padding-bottom: 0 !important;
+        }
+
+        .page-breadcrumb {
+            padding-top: 8px;
+        }
+
+        .section-skills {
+            .tab-content-item {
+                font-size: 14px;
+                color: $primary-700;
+            }
+        }
+
+        .section-gallery {
+            padding: 28px 0 0 0;
+
+            .gallery-title {
+                display: none;
+            }
+
+            .gallery-tab {
+
+                .tabs-item {
+                    gap: 0;
+
+                    li {
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+
+                .tabs-contents {
+                    margin-top: 12px;
+                }
+
+            }
+
+            #btn_gallery_load_more {
+                display: block;
+            }
+
+            .grid-photo {
+                .grid-item {
+                    &.last-item-row {
+                        display: block;
+                    }
+                }
+            }
+
+        }
+
+        .section-news {
+            padding: 32px 0 16px 0;
+        }
+
+        .section-related-models {
+            padding: 24px 0 16px 0;
+        }
+
+        .section-request-hiring {
+            display: block;
+            z-index: $zindex-sticky;
+
+            .container-xxl{
+                flex-wrap: wrap;
+
+                .btn-primary{
+                    order: 1;
+                    width: 100%;
+                    min-width: 100%;
+                }
+            }
+
+        }
+
+    }
+
+    // responsive   320
+    @media screen and (max-width: 320px) {
+
+        .section-gallery {
+            .gallery-tab {
+                .tabs-item {
+                    li {
+                        span {
+                            font-size: 0;
+                            vertical-align: middle;
+
+                            i {
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .section-request-hiring {
+            & > * {
+                flex-direction: column;
+
+                & > * {
+                    width: 100% !important;
+                }
+
+            }
+        }
+
+    }
+
+}

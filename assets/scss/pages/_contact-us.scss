@@ -1,0 +1,237 @@
+.page-contact-us {
+
+    .section-contact-us {
+        padding-top: 32px;
+    }
+
+    header{
+        .menu,
+        .app-bar-container{
+            max-width: 1368px !important;
+        }
+    }
+
+    h2 {
+        @include title-1(600);
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    p {
+        margin-top: 0;
+    }
+
+    form {
+        .row {
+            margin-top: -24px;
+            justify-content: end;
+
+            & > * {
+                margin-top: 24px;
+
+                &:last-child {
+                    margin-top: 48px;
+                }
+            }
+        }
+
+        .field-type-text-area {
+            margin-top: 16px;
+        }
+    }
+
+    .contact-notice {
+        @include title-1(500);
+    }
+
+    .company-location {
+        width: 100%;
+    }
+
+    .contact-links-content {
+        justify-content: space-between;
+
+        & > *:first-child {
+            & > *:not(:first-child) {
+                margin-top: 32px;
+            }
+        }
+
+        ul.list-link-contact {
+            gap: 16px;
+            display: flex;
+            flex-direction: column;
+
+            li {
+                gap: 8px;
+                display: flex;
+                @include title-2(500);
+
+                a {
+                    text-decoration: none;
+                }
+
+                i {
+                    font-size: 24px;
+                }
+
+                span.sub {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .social-network {
+        gap: 16px;
+        display: flex;
+        align-items: center;
+        margin-top: 48px !important;
+
+        span {
+            @include title-2(600);
+        }
+    }
+
+    .page-more-links {
+
+        &.visible-desktop {
+            margin-top: 48px !important;
+        }
+
+        @media screen and (max-width: 768px) {
+            &.visible-desktop {
+                display: none !important;
+            }
+            &.visible-mobile {
+                display: block !important;
+            }
+        }
+
+    }
+
+    .popup-contact-sent-support-message {
+        .popup-content {
+            width: 420px;
+            padding: 40px 44px 40px 44px;
+
+            .alert-icon {
+                width: 154px;
+                height: 154px;
+                border: 1px solid tint($success, 50);
+                box-shadow: inset 0 0 0 10px $white, inset 0 0 0 11px tint($success, 25), inset 0 0 0 21px $white, inset 0 0 0 22px $success;
+            }
+
+            .alert-icon.danger {
+                width: 154px;
+                height: 154px;
+                border: 1px solid tint($danger, 50);
+                box-shadow: inset 0 0 0 10px $white, inset 0 0 0 11px tint($danger, 25), inset 0 0 0 21px $white, inset 0 0 0 22px $danger;
+            }
+
+            .alert-title {
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 150%;
+                margin-top: 32px;
+            }
+
+            .alert-inner-content {
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 150%;
+                margin-top: 8px;
+            }
+
+            .alert-actions {
+                margin-top: 72px;
+
+                a{
+                    font-size: 14px;
+                }
+
+            }
+
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+
+        h2 {
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: 16px;
+        }
+
+        form {
+            .row {
+                & > * {
+                    &:last-child {
+                        margin-top: 24px;
+                    }
+                }
+            }
+
+            .field-type-text-area {
+                margin-top: 16px;
+            }
+        }
+
+        .contact-notice {
+            font-size: 14px;
+        }
+
+        .contact-links-content {
+            ul {
+                li {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .company-location {
+            height: 184px;
+        }
+
+        .social-network {
+            flex-direction: column;
+            align-items: start;
+        }
+
+    }
+
+    @media screen and (max-width: 767px) {
+        .contact-links-content {
+            gap: 48px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+
+        .page-breadcrumb {
+            display: none;
+        }
+
+        .section-contact-us {
+            padding-top: 32px;
+            padding-bottom: 28px;
+        }
+
+        .popup-contact-sent-support-message {
+            .popup-content {
+                padding: 24px;
+
+                .alert-title {
+                    margin-top: 24px;
+                }
+
+                .alert-actions {
+                    margin-top: 24px;
+                }
+
+            }
+        }
+
+    }
+
+}

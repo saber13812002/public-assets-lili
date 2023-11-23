@@ -1,0 +1,210 @@
+.btn {
+
+    display: inline-block;
+    position: relative;
+    font-family: $btn-font-family;
+    font-style: $btn-font-style;
+    font-weight: $btn-font-weigth;
+    font-size: $btn-font-size;
+    line-height: $btn-font-height;
+    color: $btn-color;
+    background-color: $btn-bg-color;
+    border: $btn-border-width $btn-border-style $btn-botder-color;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.15s ease;
+    outline: none;
+    cursor: pointer;
+
+    &:not(.btn-icon) {
+        @include padding-symmetry(($btn-padding-x - ($btn-border-width * 2)), ($btn-padding-y - ($btn-border-width * 2)));
+    }
+
+    &:focus {
+        background-color: $primary-100;
+    }
+
+    .badge{
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        padding: 0 5px;
+        background-color: $danger;
+        color: $white;
+        font-size: 10px;
+        line-height: 16px;
+        border-radius: 99px;
+    }
+
+    &.btn-primary {
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+
+        &:hover {
+            background-color: shade($primary-900, 50%);
+            border-color: shade($primary-900, 50%);
+        }
+
+        &:focus {
+            background-color: $primary-900;
+            border-color: $primary-900;
+        }
+    }
+
+    &.disable {
+        background-color: $primary-600 !important;
+        border-color: $primary-600 !important;
+        color: $white !important;
+    }
+
+    %icon-size {
+        font-size: 24px;
+    }
+
+    %icon-mix {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    & > span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &.btn-icon-left {
+        & > span {
+            vertical-align: inherit;
+            position: relative;
+            padding-left: 32px;
+        }
+
+        i {
+            @extend %icon-size;
+            @extend %icon-mix;
+            left: 0;
+        }
+    }
+
+    &.btn-icon-right {
+        & > span {
+            vertical-align: inherit;
+            position: relative;
+            padding-right: 32px;
+        }
+
+        i {
+            @extend %icon-size;
+            @extend %icon-mix;
+            right: 0;
+        }
+    }
+
+    &.btn-xl {
+        font-size: $btn-xl-font-size;
+        line-height: $btn-xl-font-height;
+        border-color: $primary-300;
+        @include padding-symmetry(($btn-xl-padding-x - ($btn-border-width * 2)), ($btn-xl-padding-y - ($btn-border-width * 2)));
+        transition: all 0.1s ease;
+
+        &:hover {
+            background-color: tint(black, 50%);
+            border-color: $primary-300;
+            color: $white;
+        }
+
+        &:focus {
+            background-color: black;
+            border-color: black;
+            color: $white;
+        }
+    }
+
+    &.btn-xxl {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-decoration: none;
+        @include display-4(300);
+        background-color: transparent;
+        border: 1px solid $primary-500;
+        transition: all 0.1s ease;
+
+        &:hover {
+            background-color: tint(black, 50%);
+            border-color: tint(black, 50%);
+            color: $white;
+        }
+
+        &:focus {
+            background-color: black;
+            border-color: black;
+            color: $white;
+        }
+    }
+
+    &.btn-floating {
+        position: relative;
+        padding: 0 !important;
+
+        & > span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &.btn-icon {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border: none !important;
+        background-color: transparent !important;
+        padding: 0 !important;
+
+        i {
+            @extend %icon-size;
+            line-height: 40px;
+        }
+    }
+
+    &.btn-full {
+        width: 100%;
+    }
+
+    &.btn-filter {
+        color: $primary-850;
+        border-color: transparent;
+        background-color: $btn-bg-color;
+
+        &.active {
+            color: $primary;
+            border-color: transparent transparent $primary transparent;
+        }
+
+    }
+
+    @media screen and (max-width: 576px) {
+
+        font-size: $btn-mobile-font-size;
+        font-weight: $btn-mobile-font-weigth;
+        line-height: $btn-mobile-font-height;
+        border-width: $btn-mobile-border-width;
+
+        &:not(.btn-icon) {
+            @include padding-x($btn-mobile-padding-x);
+            @include padding-y($btn-mobile-padding-y);
+        }
+
+        &.btn-xxl {
+            font-size: 16px;
+        }
+
+    }
+
+}

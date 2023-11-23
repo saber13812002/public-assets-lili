@@ -1,0 +1,167 @@
+@import './pages/home';
+@import './pages/model';
+@import './pages/archive';
+@import './pages/contact-us';
+@import './pages/about-us';
+@import './pages/company-profile';
+@import './pages/privacy-and-policy';
+@import './pages/account-form';
+@import './pages/news';
+@import './pages/news_single';
+@import './pages/work-single';
+@import './pages/bookmark';
+@import './pages/request-hiring';
+@import './pages/request-result';
+@import './pages/request-hiring-model';
+@import './pages/model-selected';
+@import './pages/become-a-model';
+@import './pages/apply-as-a-model';
+@import './pages/apply-as-a-model-form';
+@import './pages/apply-as-a-model-success';
+@import './pages/apply-as-a-model-form-role';
+@import './pages/invitation';
+@import './pages/compare';
+
+.msg-construction {
+    @include title-3(700);
+    text-transform: uppercase;
+    text-align: center;
+    color: $primary-800;
+    background-color: $primary-300;
+    padding: 120px 0;
+}
+
+.page-title {
+
+    h1,
+    h2 {
+        @include display-3();
+        text-transform: uppercase;
+        text-align: center;
+        color: $primary;
+        margin-top: 24px;
+        margin-bottom: 56px;
+
+        @media screen and (max-width: 576px) {
+            display: none;
+        }
+
+    }
+
+}
+
+.page-more-links{
+
+    &.visible-mobile{
+        display: none;
+    }
+
+    h2{
+        display: block;
+        font-size:16px;
+        font-weight: 600;
+        line-height: 140%;
+        text-align: left;
+        margin: 0 0 8px 0;
+    }
+
+    .link-item{
+        font-size:16px;
+        font-weight: 500;
+        line-height: 22px;
+
+        &:not(:last-child){
+            margin-bottom: 40px;
+        }
+
+        span{
+            letter-spacing: -0.32px;
+        }
+
+    }
+
+    @media screen and (max-width: 576px){
+        padding: 16px 0 28px 0;
+
+        h2{
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 22px;
+            letter-spacing: -0.28px;
+            margin-bottom: 8px;
+        }
+
+        .link-item{
+            font-size:14px;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: -0.28px;
+
+            &:not(:last-child){
+                margin-bottom: 32px;
+            }
+
+        }
+
+        &.visible-desktop{
+            display: none;
+        }
+        &.visible-mobile{
+            display: block;
+        }
+    }
+
+}
+
+// our services
+.our-services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 24px;
+    margin-top: 24px;
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    @media screen and (max-width: 320px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+// news heading
+.heading-news {
+    .heading-content {
+        & > * {
+            overflow: hidden;
+        }
+    }
+}
+
+// read more and less
+.read-more-element{
+    .read-more-button{
+        font-weight: 500;
+        color: $primary;
+        cursor: pointer;
+        padding-left: 8px;
+    }
+}
+
+.job-exp-table-repeater-popup .repeater-inner-wrapper{
+    height: 956px;
+}
+
+// responsive   576
+@media screen and (max-width: 576px) {
+    .page-loading {
+        .loading-content {
+            img {
+                width: 140px;
+            }
+        }
+    }
+}

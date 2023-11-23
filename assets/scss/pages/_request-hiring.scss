@@ -1,0 +1,332 @@
+.page-request-hiring {
+
+    .page-title {
+        h1 {
+            margin: 32px 0 40px 0;
+        }
+    }
+
+    .section-models {
+        padding: 0;
+
+        .grid-models {
+            gap: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            @extend %hide-scrollbar;
+
+            &>* {
+                flex: none;
+                width: calc((100% - 48px) / 3);
+            }
+
+        }
+
+    }
+
+    .gap-1{
+        margin-left: -6px;
+        margin-right: -6px;
+
+        .col{
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+
+    }
+
+    .col-country-code{
+        flex: none !important;
+        width: 160px;
+    }
+
+    .section-form {
+        padding: 96px 0 48px 0;
+
+        .radio-box {
+            gap: 24px;
+            display: flex;
+            align-items: center;
+
+            &>* {
+                flex: none;
+            }
+
+        }
+
+        .form-message {
+            h6 {
+                font-weight: 600;
+            }
+        }
+
+        .form-upload {
+            padding-top: 4px;
+
+            .row {
+                align-items: center;
+
+                &>*:nth-child(1) {
+                    b {
+                        display: block;
+                        @include title-2(500);
+                    }
+
+                    span {
+                        @include title-3(400);
+                    }
+                }
+
+            }
+        }
+
+        .form-actions {
+            padding: 0;
+            margin-top: 32px;
+
+            .action-hint{
+                width: 100%;
+                max-width: 600px;
+                font-size: 14px;
+                font-weight: 500;
+                text-align: center;
+                margin: 0 auto 24px auto;
+            }
+
+            button{
+                display: block;
+                max-width: 300px;
+                margin: auto;
+            }
+
+            .field-type-checkbox {
+
+                label {
+                    margin: auto;
+                }
+
+            }
+
+        }
+
+        .uploaded-files {
+            display: none;
+
+            h6 {
+                font-weight: 600;
+            }
+
+            ul {
+                gap: 16px;
+                display: flex;
+                flex-direction: column;
+
+                li {
+                    gap: 8px;
+                    height: 56px;
+                    display: flex;
+                    align-items: center;
+                    background-color: $primary-200;
+                    padding: 8px 12px;
+
+                    .file-content {
+                        flex: auto;
+                        display: flex;
+                        align-items: center;
+                        overflow: hidden;
+
+                        &>i {
+                            flex: none;
+                            font-size: 24px;
+                            margin-right: 8px;
+                        }
+
+                        .file-name {
+                            @include title-1(500);
+                            color: $primary;
+                            margin-right: 8px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                        .file-size {
+                            @include title-2(400);
+                            color: $primary-700;
+                            flex: none;
+                        }
+
+                    }
+
+                    .item-actions{
+                        flex: none;
+                        display: flex;
+                        align-items: center;
+
+                        button {
+                            flex: none;
+
+                            &.remove{
+                                color: $danger;
+                            }
+
+                        }
+
+                        .item-status{
+                            font-size: 14px;
+                            margin-right: 8px;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    // responsive   992
+    @media screen and (max-width:992px) {
+        .section-models {
+            .grid-models {
+                &>* {
+                    width: calc((100% - 72px) / 4);
+                }
+            }
+        }
+    }
+
+    // responsove   768
+    @media screen and (max-width:768px) {
+        .section-models {
+            .grid-models {
+                &>* {
+                    width: calc((100% - 48px) / 3);
+                }
+            }
+        }
+    }
+
+    // responsive   576
+    @media screen and (max-width:576px) {
+
+        #content {
+            padding: 24px 0 0 0 !important;
+        }
+
+        .section-models {
+            .grid-models {
+                gap: 16px;
+                flex-wrap: nowrap;
+                justify-content: start;
+                overflow-x: auto;
+                overflow-y: hidden;
+                margin: 0 -24px;
+                padding: 0 24px;
+
+                &>* {
+                    width: calc((100% - 16px) / 2);
+                }
+
+            }
+        }
+
+        .section-form {
+            padding: 40px 0 0 0;
+
+            .radio-box {
+                gap: 0;
+
+                &>* {
+                    flex: 1 1 0;
+
+                    &:last-child {
+                        width: 70%;
+                    }
+                }
+            }
+
+            .form-shooting-time {
+                margin-top: 16px;
+                justify-content: space-between;
+            }
+
+            .form-message {
+                padding-top: 28px;
+            }
+
+            .form-upload {
+                padding-top: 28px;
+
+                label {
+                    width: 100%;
+                }
+
+            }
+
+            .form-actions {
+                padding: 16px 0 32px 0;
+                margin-top: 0;
+
+                .field-type-checkbox {
+                    label {
+                        margin: 0 auto 16px 0;
+                    }
+                }
+            }
+
+            .uploaded-files {
+
+                h6 {
+                    display: none;
+                }
+
+                ul {
+                    li {
+
+                        &.error,
+                        &.uploading{
+                            height: auto;
+                            flex-direction: column;
+
+                            .file-content{
+                                width: 100%;
+
+                                .file-name{
+                                    flex: auto;
+                                }
+
+                            }
+
+                        }
+
+                        .file-content {
+
+                            .file-name {
+                                font-size: 14px;
+                            }
+
+                            .file-size {
+                                font-size: 12px;
+                            }
+
+                        }
+                    }
+                }
+
+            }
+
+            .form-actions{
+                .action-hint{
+                    font-size: 12px;
+                    text-align: left;
+                }
+            }
+
+        }
+
+    }
+
+}

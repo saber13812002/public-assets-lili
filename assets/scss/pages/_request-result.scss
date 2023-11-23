@@ -1,0 +1,25 @@
+.page-request-result {
+
+    #content {
+        padding: 0 !important
+    }
+
+    // responsive   576
+    @media screen and (max-width:576px) {
+
+        .req-message {
+            padding: 36px 0 12px 0;
+
+            h2 {
+                display: none;
+            }
+
+            .req-message-actions {
+                margin-top: 48px;
+            }
+
+        }
+
+    }
+
+}

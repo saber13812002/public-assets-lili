@@ -1,0 +1,246 @@
+.page-bookmark {
+
+    #content {
+        padding-bottom: 72px !important;
+    }
+
+    .page-breadcrumb {
+        padding: 32px 0;
+    }
+
+    // step --- 1
+    &.bookmark-list {
+
+        .page-breadcrumb {
+            padding: 32px 0 24px 0;
+        }
+
+        .page-title {
+            h1 {
+                margin: 0 0 32px 0;
+            }
+        }
+
+        .section-actions {
+            padding: 0;
+            background-color: $white;
+
+            .container {
+                max-width: 672px;
+            }
+        }
+
+        .empty-message {
+            @include title-1(500);
+            text-align: center;
+            padding-bottom: 40px;
+        }
+
+    }
+
+    .sections-models {
+
+        .grid-models {
+            gap: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            & > * {
+                flex: none;
+                width: calc((100% - 96px) / 5);
+            }
+        }
+
+        .add-more {
+            a {
+                padding-bottom: calc(1.33 * 100%) !important;
+
+                & > span {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+            }
+        }
+
+    }
+
+    &.bookmark-select-models {
+
+        .page-title {
+            padding-top: 32px;
+
+            .row {
+                align-items: center;
+            }
+
+            h1 {
+                margin: 0;
+                text-align: left;
+            }
+        }
+
+        .sections-models {
+            padding: 56px 0;
+        }
+
+        .section-actions {
+            padding: 0;
+
+            .row {
+                align-items: center;
+            }
+
+            .btn-cancel {
+                border-color: transparent;
+            }
+
+        }
+
+    }
+
+    // responsive   992
+    @media screen and (max-width: 992px) {
+
+        .sections-models {
+            .grid-models {
+                & > * {
+                    width: calc((100% - 72px) / 4);
+                }
+            }
+        }
+
+        &.bookmark-select-models {
+
+            .section-actions {
+                background-color: $white;
+                padding: 16px 0 32px 0;
+
+                .btn-cancel {
+                    width: 100%;
+                    border-color: $primary;
+                }
+
+                & > div > .row {
+                    gap: 24px;
+                    flex-direction: column-reverse;
+                }
+
+            }
+
+        }
+
+    }
+
+    // responsove   768
+    @media screen and (max-width: 768px) {
+
+        .sections-models {
+            .grid-models {
+                & > * {
+                    width: calc((100% - 48px) / 3);
+                }
+            }
+        }
+
+    }
+
+    // responsove   576
+    @media screen and (max-width: 576px) {
+
+        .page-breadcrumb {
+            padding: 12px 0;
+        }
+
+        // step --- 1
+        &.bookmark-list {
+
+            #content {
+                padding-bottom: 0 !important;
+            }
+
+            .section-actions {
+                padding: 24px 0;
+
+                a:not(.btn-primary) {
+                    border: none;
+                }
+
+            }
+
+        }
+
+        .sections-models {
+            padding: 0;
+
+            .grid-models {
+                gap: 16px;
+                justify-content: start;
+
+                & > * {
+                    width: calc((100% - 16px) / 2);
+                }
+
+            }
+
+        }
+
+        .section-actions {
+            position: sticky;
+            bottom: 0;
+            z-index: 9;
+
+            & .row {
+                gap: 8px;
+            }
+        }
+
+        &.bookmark-select-models {
+
+            #content {
+                padding-bottom: 0 !important;
+            }
+
+            .page-title {
+                display: none;
+            }
+
+            .sections-models {
+                padding: 0;
+            }
+
+            .section-actions {
+                background-color: $white;
+                padding: 16px 0 32px 0;
+
+                .btn-cancel {
+                    width: 100%;
+                    border-color: $primary;
+                }
+
+                .row {
+                    gap: 8px !important;
+                    flex-direction: column-reverse;
+                }
+
+            }
+
+        }
+
+    }
+
+    // responsive   320
+    @media screen and (max-width: 320px) {
+        .sections-models {
+            .grid-models {
+                & > * {
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+
+}

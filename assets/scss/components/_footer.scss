@@ -1,0 +1,253 @@
+#footer {
+    color: $white;
+    background-color: $primary;
+
+    & * {
+        color: $white;
+    }
+
+    .row {
+        row-gap: 40px;
+        align-items: stretch;
+        @include padding-symmetry(0, 64px);
+
+        & > * {
+            &:nth-child(1) {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            &:nth-child(3) {
+                display: flex;
+                justify-content: end;
+                gap: 48px;
+            }
+
+            &:nth-child(4),
+            &:nth-child(5) {
+                display: none;
+            }
+        }
+    }
+
+    .ft-about-us {
+        .ft-site-logo img {
+            height: 48px;
+        }
+
+        p {
+            @include title-2();
+            width: 320px;
+            max-width: 100%;
+            margin: 16px 0 0 0;
+        }
+    }
+
+    .social-link {
+        .btn {
+            color: $white;
+        }
+    }
+
+    .ft-contact-us {
+        width: 320px;
+        max-width: 100%;
+        margin: auto;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            li {
+                display: flex;
+                gap: 12px;
+            }
+
+            i {
+                font-size: 24px;
+            }
+
+            a,
+            span {
+                @include title-2(500);
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .ft-menu,
+    .ft-categories {
+        ul {
+
+            li {
+                &:not(:first-child) {
+                    margin-top: 2px;
+                }
+            }
+
+            a {
+                @include title-3(500);
+                color: $white;
+                @include padding-x(16px);
+                white-space: nowrap;
+            }
+        }
+    }
+
+    //.ft-categories{
+    //    ul{
+    //        column-gap: 0;
+    //        columns: 2;
+    //    }
+    //}
+
+    .ft-title {
+        @include title-1(500);
+        margin-bottom: 8px;
+        padding: 8px;
+    }
+
+    .accordion {
+        .accordion-header {
+            color: $white;
+        }
+    }
+
+    .copyright {
+        color: $primary;
+        text-align: center;
+        @include title-2();
+        @include padding-symmetry(48px, 24px);
+        background-color: $primary-200;
+    }
+
+    @media screen and (max-width: 992px) {
+
+        .footer-more-links {
+            order: 5;
+
+            .accordion {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+        }
+
+        .ft-contact-us {
+            width: 100%;
+        }
+
+    }
+
+    @media screen and (max-width: 576px) {
+
+        .copyright {
+            font-size: 10px;
+        }
+
+        .row {
+            flex-direction: column;
+            gap: 24px;
+            padding-top: 24px;
+            padding-bottom: 32px;
+
+            & > * {
+                &:nth-child(1) {
+                    .social-link {
+                        display: none;
+                    }
+                }
+
+                &:nth-child(4),
+                &:nth-child(5) {
+                    display: block;
+                }
+
+                &:nth-child(5) {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .ft-about-us {
+            padding-bottom: 8px;
+
+            p {
+                width: 100%;
+                font-size: 12px;
+            }
+        }
+
+        .ft-contact-us {
+            ul {
+                gap: 16px;
+
+                span {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .ft-categories{
+            ul{
+                column-gap: 0;
+                columns: 1;
+            }
+        }
+
+        .ft-menu,
+        .ft-categories{
+            ul{
+
+                a{
+                    padding-left: 0;
+                    padding-right: 0;
+                    text-decoration: none;
+                }
+
+                li:not(:first-child){
+                    margin-top: 8px;
+                }
+
+            }
+        }
+
+    }
+
+    @media screen and (min-width: 992px) {
+
+        .footer-more-links {
+            .accordion {
+                gap: 24px;
+                display: flex;
+                justify-content: end;
+
+                .accordion-item {
+                    flex: 1 1 0;
+                }
+
+                .accordion-header {
+                    margin-bottom: 8px;
+                    padding: 8px;
+
+                    i {
+                        display: none;
+                    }
+
+                }
+
+                .accordion-content {
+                    display: block !important;
+                    padding: 0 !important;
+                    height: auto !important;
+                }
+
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,88 @@
+.page-privacy-policy {
+
+    header{
+        .menu,
+        .app-bar-container{
+            max-width: 1368px !important;
+        }
+    }
+
+    .section-content {
+        padding-top: 48px;
+        padding-bottom: 8px;
+    }
+
+    .page-more-links{
+        padding-bottom: 24px;
+    }
+
+    h6 {
+        font-weight: 600;
+        margin-top: 40px;
+    }
+
+    .term-update {
+        gap: 16px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+
+        i {
+            flex: none;
+            font-size: 48px;
+        }
+
+        .term-update-title {
+            @include display-6(600);
+        }
+
+        .term-update-date {
+            @include title-2(500);
+            color: $primary-700;
+            margin-top: 2px;
+        }
+
+    }
+
+    main {
+        ul {
+            color: $primary-900;
+            padding-left: 28px;
+        }
+    }
+
+    @media screen and (max-width:576px) {
+
+        h5 {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .page-breadcrumb {
+            display: none;
+        }
+
+        .section-content {
+            padding-top: 32px;
+            padding-bottom: 28px;
+        }
+
+        .term-update {
+
+            i {
+                font-size: 32px;
+            }
+
+            .term-update-title {
+                font-size: 14px;
+            }
+
+            .term-update-date {
+                font-size: 12px;
+            }
+
+        }
+
+    }
+
+}

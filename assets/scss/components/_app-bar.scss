@@ -1,0 +1,124 @@
+.app-bar {
+
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: $white;
+    border-bottom: 1px solid $primary-300;
+    z-index: $zindex-fixed;
+
+    .app-bar-container {
+        gap: 16px;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin: auto;
+        max-width: map-get($container-max-widths, 'xxl');
+        @include padding-symmetry($container-padding-x, 0);
+    }
+
+    .app-bar-title {
+
+        flex: auto;
+        text-align: center;
+        justify-content: center;
+
+        h1,
+        span,
+        .app-bat-title-text{
+            @include title-1(600);
+            margin: 0;
+        }
+
+        h1,
+        .app-bar-title-hidden,
+        .app-bar-title-text{
+            display: none;
+        }
+
+    }
+
+    .leading,
+    .actions {
+
+        gap: 4px;
+        display: flex;
+        align-items: center;
+        flex: none;
+        width: 25%;
+
+        a:not(.btn) {
+            @include title-3();
+        }
+
+        a.deselect-all-checkbox{
+            margin-right: 8px;
+        }
+
+        &>* {
+            flex: none;
+        }
+
+    }
+
+    .leading {
+        justify-content: start;
+    }
+
+    .actions {
+        justify-content: end;
+    }
+
+    .app-bar-desktop {
+        display: block;
+    }
+
+    .app-bar-mobile {
+        display: none;
+    }
+
+    // responsive   768
+    @media screen and (max-width:768px) {
+
+        .app-bar-title {
+            text-align: left;
+            justify-content: start;
+        }
+
+        .leading,
+        .actions {
+            width: auto;
+        }
+
+    }
+
+    // responsive   576
+    @media screen and (max-width:576px) {
+
+        height: 72px;
+        border: none;
+        background-color: $primary-200;
+
+        .app-bar-container {
+            gap: 8px;
+            padding: 0 16px;
+        }
+
+        .app-bar-title {
+            h1,
+            .app-bat-title-text{
+                display: block;
+            }
+        }
+
+        .app-bar-desktop {
+            display: none !important;
+        }
+
+        .app-bar-mobile {
+            display: block !important;
+        }
+
+    }
+
+}

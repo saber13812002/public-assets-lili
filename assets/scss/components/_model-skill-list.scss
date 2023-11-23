@@ -1,0 +1,77 @@
+.model-skill-list{
+
+    .model-skill-title{
+        padding: 4px 16px;
+        font-size: 18px;
+        font-weight: 600;
+        color: $primary;
+        border-left: 2px solid $primary;
+        margin: 32px 0 16px 0;
+
+        &:first-child{
+            margin-top: 0;
+        }
+
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+
+        li{
+            padding: 24px 0;
+
+            &:not(:last-child){
+                border-bottom: 1px solid $primary-300;
+            }
+
+            &:first-child{
+                padding-top: 0;
+            }
+
+            &:last-child{
+                padding-bottom: 0;
+            }
+
+        }
+
+    }
+
+    .skill-title{
+        font-size: 16px;
+        font-weight: 500;
+        color: $primary;
+    }
+
+    .skill-metas{
+        column-gap: 16px;
+        row-gap: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 8px;
+    }
+
+    .skill-meta{
+        gap: 4px;
+        display: flex;
+        font-size: 14px;
+        color: $primary;
+
+        .meta-name{
+            font-weight: 500;
+        }
+
+    }
+
+    .skill-description{
+        margin-top: 16px;
+    }
+
+    @media screen and (max-width: 576px) {
+        .model-skill-title{
+            padding: 2px 8px;
+            margin: 24px 0 16px 0;
+        }
+    }
+
+}

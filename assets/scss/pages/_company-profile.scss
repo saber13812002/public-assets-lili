@@ -1,0 +1,120 @@
+.page-company-profile {
+
+    header{
+        .menu,
+        .app-bar-container{
+            max-width: 1368px !important;
+        }
+    }
+
+    .page-more-links{
+        padding-top: 16px;
+    }
+
+    table {
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+
+        tr {
+            td {
+                border-bottom: 1px solid $primary-400;
+                vertical-align: top;
+                padding: 32px 0;
+
+                &:nth-child(1) {
+                    white-space: nowrap;
+                    padding-right: 12px;
+                }
+
+                &:nth-child(2) {
+                    font-weight: 500;
+                    padding-left: 12px;
+                }
+
+            }
+
+            &:first-child {
+                td {
+                    padding-top: 0;
+                }
+            }
+
+            &:last-child {
+                td {
+                    border: none;
+                    padding-bottom: 0;
+                }
+            }
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h6 {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: $primary-800;
+            margin-top: 0;
+
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+        }
+
+    }
+
+    // responsive   576
+    @media screen and (max-width:576px) {
+
+        font-size: 16px;
+
+        .page-breadcrumb{
+            display: none;
+        }
+
+        .section-content {
+            padding-bottom: 28px;
+        }
+
+        table {
+            display: block;
+
+            tr {
+                gap: 12px;
+                display: flex;
+                flex-direction: column;
+                padding: 32px 0;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $primary-400;
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+
+                td {
+                    display: block;
+                    border: none;
+                    padding: 0 !important;
+                }
+
+            }
+
+        }
+
+        .address {
+            gap: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+
+}

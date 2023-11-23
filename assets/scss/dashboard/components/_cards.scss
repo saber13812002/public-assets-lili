@@ -1,0 +1,74 @@
+.activity-card {
+    @include title-2(500);
+    padding: 16px 24px;
+    border: 1px solid $primary-300;
+
+    &>i {
+        display: block;
+        position: relative;
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+        border-radius: 100%;
+        border: 1px solid tint($primary, 25);
+        box-shadow: inset 0 0 0 4px $white, inset 0 0 0 5px $primary;
+        margin: 0 auto 0 0;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    }
+
+    .card-title {
+        margin-top: 16px;
+        color: $primary-800;
+    }
+
+    .card-content {
+        display: flex;
+        align-items: center;
+        margin-top: 4px;
+
+        .card-value {
+            flex: auto;
+            font-weight: 600;
+            font-size: 28px;
+        }
+
+        .card-status {
+            flex: none;
+            padding: 4px 10px;
+            border: 1px solid;
+            border-radius: 99px;
+
+            i {
+                font-size: 20px;
+                margin-right: 4px;
+                vertical-align: middle;
+            }
+
+            span {
+                vertical-align: middle;
+            }
+
+            &.success {
+                color: $success;
+            }
+
+            &.warning {
+                color: $warning;
+            }
+
+            &.danger {
+                color: $danger;
+            }
+
+        }
+
+    }
+
+}

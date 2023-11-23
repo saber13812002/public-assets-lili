@@ -1,0 +1,22 @@
+input {
+    height: $input-height;
+    font-family: $input-font-family;
+    font-style: $input-font-style;
+    font-weight: $input-font-weigth;
+    font-size: $input-font-size;
+    line-height: $input-font-height;
+    color: $input-color;
+    background-color: transparent;
+    @include padding-x($input-padding-x);
+    @include padding-y($input-padding-y);
+    outline: none;
+
+    &::placeholder {
+        font-family: $input-placeholder-font-family;
+        font-style: $input-placeholder-font-style;
+        font-weight: $input-placeholder-font-weigth;
+        font-size: $input-placeholder-font-size;
+        line-height: $input-placeholder-font-height;
+        color: $input-placeholder-color;
+    }
+}

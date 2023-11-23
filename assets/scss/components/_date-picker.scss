@@ -1,0 +1,304 @@
+.date-picker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $zindex-modal;
+    transition: all 0.15s cubic-bezier(0.36, 0.04, 0.44, 0.99);
+    opacity: 0;
+
+    &.visible {
+        opacity: 1;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    .content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-height: 100%;
+        background-color: $white;
+        overflow-y: auto;
+        z-index: 2;
+    }
+
+    .header {
+        gap: 8px;
+        display: flex;
+        align-items: center;
+        height: 48px;
+        padding: 0 12px;
+        border-bottom: 1px solid $primary-500;
+
+        .title {
+            flex: auto;
+            @include title-2(500);
+            color: $primary-800;
+        }
+
+        .btn {
+            flex: none;
+            width: auto;
+        }
+
+    }
+
+    .inner-content {
+        padding: 24px;
+
+        .lightpick {
+            width: 100%;
+            box-shadow: none;
+        }
+
+        .lightpick__month {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .lightpick__month-title-bar {
+            justify-content: space-between;
+            margin-bottom: 32px;
+
+            .lightpick__month-title {
+                gap: 8px;
+                order: 2;
+                display: flex;
+                align-items: center;
+                @include title-1(500);
+                margin: 0;
+
+            }
+
+            .lightpick__previous-action {
+                order: 1;
+            }
+
+            .lightpick__next-action {
+                order: 3;
+            }
+
+            .lightpick__next-action,
+            .lightpick__previous-action {
+                margin: 0;
+                padding: 0;
+                width: auto;
+                width: 24px;
+                border-radius: 0;
+                background-color: transparent;
+                cursor: pointer;
+
+                i {
+                    font-size: 24px;
+                    pointer-events: none;
+                }
+
+            }
+
+        }
+
+        .lightpick__days-of-the-week {
+            margin-bottom: 16px;
+
+            .lightpick__day-of-the-week {
+                @include title-3(500);
+                color: $primary-600;
+            }
+
+        }
+
+        .lightpick__days {
+            row-gap: 12px;
+            column-gap: 10px;
+
+            .lightpick__day {
+                @include title-2(500);
+                color: $primary;
+                height: 38px;
+                border-radius: 0;
+                cursor: pointer;
+
+                &.is-today {
+                    background: transparent;
+                    border-bottom: 1px solid $primary-400;
+                }
+
+                &:hover {
+                    background: $primary-200;
+                    border: 1px solid $primary-400;
+                }
+
+                &.is-previous-month {
+                    opacity: 1;
+                    color: $primary-700;
+                }
+
+                &.is-start-date {
+                    background: $primary;
+                    border-color: $primary;
+                    color: $white;
+                }
+
+                &.is-in-range {
+                    background-color: $primary-200;
+                    box-shadow: 10px 0 0 $primary-200;
+
+                    &.is-start-date {
+                        border-color: $primary-400;
+                        border-width: 1px 0 1px 1px;
+                        border-style: solid;
+                        color: $primary;
+                    }
+
+                    &.is-end-date {
+                        border-color: $primary-400;
+                        border-width: 1px 1px 1px 0;
+                        border-style: solid;
+                        box-shadow: none;
+                        color: $primary;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &.mode-wheel {
+
+        .wheel-label {
+            @include title-2(500);
+            text-align: center;
+            color: $primary-800;
+            margin-bottom: 24px;
+        }
+
+        .inner-content {
+            display: flex;
+
+            &>div {
+                flex: 1 1 0;
+            }
+
+        }
+
+        &.type-date {
+            .inner-content {
+                gap: 16px;
+            }
+        }
+
+        &.type-time {
+            .inner-content {
+                gap: 24px;
+                padding: 48px;
+
+                .seperator {
+                    flex: none;
+                    align-self: center;
+                    font-size: 24px;
+                    font-weight: 500;
+                    margin-top: 48px;
+                }
+
+                .wheel-picker {
+                    &::before {
+                        border-color: $primary;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .footer {
+        padding: 24px;
+    }
+
+    // responsive   576
+    @media screen and (max-width:576px) {
+        opacity: 1;
+
+        .overlay {
+            transition: all 0.15s cubic-bezier(0.36, 0.04, 0.44, 0.99);
+            opacity: 0;
+        }
+
+        .content {
+            position: fixed;
+            top: auto;
+            bottom: 0;
+            transform: translateY(100%);
+            transition: all 0.15s cubic-bezier(0.36, 0.04, 0.44, 0.99);
+        }
+
+        &.visible {
+
+            .content {
+                transform: translateY(0);
+            }
+
+            .overlay {
+                opacity: 1;
+            }
+
+        }
+
+        .inner-content {
+            padding: 32px 16px;
+        }
+
+        .header {
+            border: none;
+            padding: 24px 16px 0 16px;
+
+            .title {
+                font-size: 16px;
+                font-weight: 500;
+                color: $primary;
+                padding: 8px;
+            }
+
+            .btn {
+                i {
+                    &::before {
+                        content: '\e90e';
+                    }
+                }
+            }
+
+        }
+
+        &.mode-wheel {
+
+            &.type-date {
+                .inner-content {
+                    padding: 40px 24px 32px 24px;
+                }
+            }
+
+            &.type-time {
+                .inner-content {
+                    padding: 48px;
+                }
+            }
+
+        }
+
+    }
+
+}

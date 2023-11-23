@@ -1,0 +1,187 @@
+// row
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: $grid-gutter-width * -.5;
+    margin-left: $grid-gutter-width * -.5;
+
+    & > * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: $grid-gutter-width * .5;
+        padding-left: $grid-gutter-width * .5;
+    }
+
+}
+
+.col {
+    @include make-col();
+}
+
+// create columns class for breakpoints
+@each $breakpoint,
+$size in $grid-breakpoints {
+
+    // first size 
+    @if $size ==0 {
+        @for $i from 0 through $grid-columns {
+            @if $i >0 {
+                .col-#{$i} {
+                    @include make-col($i);
+                }
+            }
+        }
+
+        .col-auto {
+            @include make-col-auto();
+        }
+    }
+
+    // breakpoints
+    @if $size >0 {
+        @media screen and (min-width: $size) {
+            .col-#{$breakpoint} {
+                @include make-col();
+            }
+
+            @for $i from 0 through $grid-columns {
+                @if $i >0 {
+                    .col-#{$breakpoint}-#{$i} {
+                        @include make-col($i);
+                    }
+                }
+            }
+
+            .col-#{$breakpoint}-auto {
+                @include make-col-auto();
+            }
+        }
+    }
+}
+
+.justify-content-normal {
+    justify-content: normal;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.justify-content-start {
+    justify-content: start;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-left {
+    justify-content: left;
+}
+
+.justify-content-right {
+    justify-content: right;
+}
+
+.justify-content-space-evenly {
+    justify-content: space-evenly;
+}
+
+.justify-content-space-around {
+    justify-content: space-around;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+.justify-content-flex-end {
+    justify-content: flex-end;
+}
+
+.justify-content-flex-start {
+    justify-content: flex-start;
+}
+
+.justify-content-stretch {
+    justify-content: stretch;
+}
+
+.justify-content-revert {
+    justify-content: revert;
+}
+
+.justify-content-unset {
+    justify-content: unset;
+}
+
+.align-items-start{
+    align-items: start;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.align-items-end{
+    align-items: end;
+}
+
+.align-items-stretch{
+    align-items: stretch;
+}
+
+.align-self-start{
+    align-self: start;
+}
+
+.align-self-center{
+    align-self: center;
+}
+
+.align-self-end{
+    align-self: end;
+}
+
+.align-self-stretch{
+    align-self: stretch;
+}
+
+// spacers
+.spacer-8{
+    height: 8px;
+}
+
+.spacer-16{
+    height: 8px;
+}
+
+.spacer-24{
+    height: 8px;
+}
+
+.spacer-32{
+    height: 8px;
+}
+
+.spacer-48{
+    height: 8px;
+}
+
+// gaps
+.row-gap-8{
+    row-gap: 8px;
+}
+
+.row-gap-16{
+    row-gap: 16px;
+}
+
+.row-gap-24{
+    row-gap: 24px;
+}
+
+.row-gap-32{
+    row-gap: 32px;
+}

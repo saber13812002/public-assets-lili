@@ -1,0 +1,225 @@
+.heading-box {
+
+    .heading-filters {
+        font-size: 0;
+
+        li {
+            display: inline-block;
+            color: $primary;
+
+            a {
+                display: block;
+                @include title-1();
+                text-decoration: none;
+                padding: 8px;
+                opacity: 0.5;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+
+            &:not(:last-child) {
+                margin-right: 16px;
+            }
+        }
+
+        &.mobile {
+            display: none;
+            margin-top: 8px;
+            white-space: nowrap;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            overflow-x: auto;
+            @include padding-symmetry($container-padding-x, 0);
+            margin: 16px ($container-padding-x / 2 * -1) 0 ($container-padding-x / 2 * -1);
+            @extend %custom-scroll;
+
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            li {
+                a {
+                    border: 1px solid $primary-300;
+                    @include padding-symmetry(32px, 16px);
+
+                    &.active {
+                        background-color: $primary-300;
+                    }
+                }
+            }
+        }
+    }
+
+    .heading-content {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr;
+        gap: 24px;
+        margin-top: 24px;
+        @extend %hide-scrollbar;
+    }
+
+    &.heading-news,
+    &.heading-item-col-4 {
+        .heading-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    // king layout
+    &.king-layout {
+
+        .top-area {
+            display: block;
+        }
+
+        .title-area {
+            display: block;
+            text-align: center;
+        }
+
+        .heading-title {
+            font-family: "TheSeasons"; // Amelaryas
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.5; // 1.8
+        }
+
+        .heading-filters {
+            display: flex;
+            align-items: center;
+            margin-top: 16px;
+            overflow-x: auto;
+            @extend %hide-scrollbar;
+
+            &::before,
+            &::after {
+                content: '';
+                flex: auto;
+                display: block;
+                width: 100px;
+                height: 1px;
+                background-color: $primary-500;
+            }
+
+            ul {
+                flex: none;
+                padding: 0 24px;
+            }
+
+        }
+
+        .heading-content {
+            gap: 8px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .heading-footer {
+            margin-top: 24px;
+
+            a {
+                gap: 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 400;
+                font-size: 19px;
+                padding: 8px;
+                text-decoration: none;
+
+                i {
+                    font-size: 24px;
+                }
+            }
+        }
+
+    }
+
+    @media screen and (max-width:768px) {
+        .heading-filters {
+            &.desktop {
+                display: none;
+            }
+
+            &.mobile {
+                display: block;
+            }
+        }
+
+        .heading-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        &.heading-news,
+        &.heading-item-col-4 {
+            .heading-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+
+    @media screen and (max-width:576px) {
+        .heading-filters {
+            li {
+                a {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .heading-content {
+            gap: 16px;
+            display: flex;
+            font-size: 0;
+            margin: 16px ($container-mobile-padding-x / 2 * -1) 0 ($container-mobile-padding-x / 2 * -1);
+            @include padding-symmetry($container-mobile-padding-x, 0);
+            overflow-y: hidden;
+            overflow-x: auto;
+
+            &>* {
+                flex: none;
+            }
+        }
+
+        // king layout
+        &.king-layout {
+
+            .title-area {
+                text-align: left;
+
+                .heading-title {
+                    display: table-caption;
+                    font-size: 21px;
+                    line-height: 1.5; // 1.9
+                    margin-bottom: 4px;
+                }
+
+                .heading-filters {
+                    padding: 0 $container-mobile-padding-x / 2;
+                    margin: 0 $container-mobile-padding-x / 2 * -1;
+
+                    &::before,
+                    &::after {
+                        display: none;
+                    }
+
+                    ul {
+                        padding: 0;
+
+                        li:not(:last-child) {
+                            margin-right: 12px;
+                        }
+                    }
+                }
+            }
+
+            .heading-footer {
+                display: none;
+            }
+
+        }
+    }
+}

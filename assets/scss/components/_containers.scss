@@ -1,0 +1,25 @@
+.container,
+.container-fluid {
+    max-width: 100%;
+    padding-right: ($container-padding-x * .5);
+    padding-left: ($container-padding-x * .5);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@each $breakpoint,
+$size in $container-max-widths {
+
+    .container-#{$breakpoint} {
+        @extend .container-fluid;
+        max-width: $size;
+    }
+
+}
+
+@media screen and (max-width:576px){
+    [class^="container"]{
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}

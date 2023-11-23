@@ -1,0 +1,254 @@
+.page-account-form {
+
+    #content{
+        padding: 72px 0 !important;
+    }
+
+    .account-form {
+        gap: 24px;
+        display: flex;
+        flex-direction: column;
+        background-color: $primary-200;
+        padding: 24px;
+
+        .app-bar {
+            height: auto;
+            background-color: transparent;
+            border: none;
+            z-index: 1;
+
+            h1 {
+                font-weight: 600;
+                font-size: 19px;
+                display: block;
+                text-align: center;
+            }
+
+            span {
+                text-align: center;
+            }
+
+            .leading,
+            .actions {
+                width: 40px;
+            }
+
+            .app-bar-container {
+                padding: 0;
+            }
+
+        }
+
+        .form-content {
+            display: flex;
+            flex-direction: column;
+
+            &>i {
+                display: block;
+                font-size: 200px;
+                text-align: center;
+                margin-bottom: 32px;
+            }
+
+            & > .notifications-list{
+                display: none;
+                margin-bottom: 32px;
+
+                &.active{
+                    display: block;
+                }
+
+                .notification-title{
+                    font-weight: 400;
+                    letter-spacing: -0.28px;
+
+                    b{
+                        font-weight: 500;
+                    }
+
+                }
+
+            }
+
+            .form-description {
+                @include title-1(500);
+                color: $primary-900;
+                margin-bottom: 16px;
+            }
+
+            .form-fields {
+                gap: 16px;
+                display: flex;
+                flex-direction: column;
+            }
+
+        }
+
+        .form-footer {
+            gap: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            a:not(.btn) {
+                padding: 8px;
+                font-size: 12px;
+            }
+        }
+
+    }
+
+    &.form-forgot {
+        .account-form {
+            padding: 40px 24px;
+
+            .form-content {
+                &>i {
+                    margin-bottom: 48px;
+                }
+            }
+
+            .form-footer{
+                margin-top: 16px;
+            }
+
+        }
+    }
+
+    &.form-verify-email {
+        .account-form {
+            padding: 40px 24px;
+
+            .form-content {
+
+                .form-description {
+                    font-weight: 400;
+                    text-align: center;
+
+                    b {
+                        font-weight: 500;
+                    }
+                }
+
+                .edit-email {
+                    display: block;
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 24px;
+
+                    i {
+                        font-size: 24px;
+                        vertical-align: middle;
+                        margin-left: 8px;
+                    }
+                }
+
+                .form-fields {
+
+                    a {
+                        font-size: 14px;
+                        font-weight: 400;
+                        padding: 8px;
+                        text-align: center;
+                    }
+
+                }
+
+            }
+
+        }
+    }
+
+    &.form-new-password {
+        .account-form {
+            padding: 40px 24px;
+
+            ul {
+                color: $primary-800;
+            }
+
+            .form-description{
+                margin-bottom: 24px;
+            }
+
+        }
+    }
+
+    // responsive   576
+    @media screen and (max-width:576px) {
+
+        #content {
+            padding: 24px 0 !important;
+        }
+
+        #footer{
+            display: none;
+        }
+
+        .account-form {
+            gap: 32px;
+            background-color: $white;
+            padding: 0;
+
+            .app-bar {
+                display: none;
+            }
+
+            .form-content {
+                &>i {
+                    order: 1;
+                    font-size: 80px;
+                    margin-bottom: 24px;
+                }
+
+                .form-description {
+                    order: 2;
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+
+                .edit-email{
+                    order: 2;
+                }
+
+                & > .notifications-list{
+                    order: 3;
+                    margin-bottom: 16px;
+                }
+
+                .form-fields{
+                    order: 4;
+                }
+
+            }
+
+        }
+
+        &.form-new-password{
+            .account-form{
+                gap: 24px;
+            }
+        }
+
+        &.form-forgot,
+        &.form-verify-email,
+        &.form-new-password {
+            .account-form {
+                padding: 0;
+            }
+        }
+
+        &.form-forgot {
+            .account-form {
+                .form-footer{
+                    margin-top: 0;
+                }
+            }
+        }
+
+    }
+
+}

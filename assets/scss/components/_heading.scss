@@ -1,0 +1,53 @@
+.heading {
+
+    .top-area {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .title-area {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex: auto;
+        gap: 32px;
+
+        .heading-title {
+            @include display-1();
+            color: $primary;
+            margin: 0;
+        }
+    }
+
+    .description {
+        @include title-1();
+        color: $primary-850;
+        margin-top: 12px;
+    }
+
+    .action-area{
+        a{
+            white-space: nowrap;
+        }
+    }
+
+    @media screen and (max-width:576px) {
+        .title-area {
+            .heading-title {
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+
+        .action-area {
+            a {
+                font-size: 12px;
+            }
+        }
+
+        .description {
+            display: none;
+        }
+    }
+}

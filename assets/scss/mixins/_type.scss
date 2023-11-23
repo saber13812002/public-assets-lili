@@ -1,0 +1,69 @@
+// display
+@mixin display-config($weight) {
+    font-family: $display-font-family;
+    font-style: $display-font-style;
+    font-weight: $weight;
+    line-height: $display-font-height;
+}
+
+@mixin display-1($weight: $display-font-weight) {
+    @include display-config($weight);
+    font-size: $display-1;
+}
+
+@mixin display-2($weight: $display-font-weight) {
+    @include display-config($weight);
+    font-size: $display-2;
+}
+
+@mixin display-3($weight: $display-font-weight) {
+    @include display-config($weight);
+    font-size: $display-3;
+}
+
+@mixin display-4($weight: $display-font-weight) {
+    @include display-config($weight);
+    font-size: $display-4;
+}
+
+@mixin display-5($weight: $display-font-weight) {
+    @include display-config($weight);
+    font-size: $display-5;
+}
+
+@mixin display-6($weight: $display-font-weight) {
+    @include display-config($weight);
+    font-size: $display-6;
+}
+
+// title
+@mixin title-config($weight, $line-height) {
+    font-family: $title-font-family;
+    font-style: $title-font-style;
+    font-weight: $weight;
+    line-height: $title-font-height;
+}
+
+@mixin title-1($weight: $title-font-weigth, $line-height: $title-font-height) {
+    @include title-config($weight, $line-height);
+    font-size: $title-1;
+}
+
+@mixin title-2($weight: $title-font-weigth, $line-height: 22px) {
+    @include title-config($weight, $line-height);
+    font-size: $title-2;
+}
+
+@mixin title-3($weight: $title-font-weigth, $line-height: $title-font-height) {
+    @include title-config($weight, $line-height);
+    font-size: $title-3;
+}
+
+// caption
+@mixin caption {
+    font-family: $caption-font-family;
+    font-style: $caption-font-style;
+    font-weight: $caption-font-weigth;
+    font-size: $caption-font-size;
+    line-height: $caption-font-height;
+}

@@ -1,0 +1,11 @@
+@mixin animation-1 {
+    transition: all 0.16s ease-in-out;
+}
+
+@mixin animation-2 {
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin animation-3 {
+    transition: all 0.4s ease-out;
+}

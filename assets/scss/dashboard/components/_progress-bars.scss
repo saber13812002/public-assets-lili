@@ -1,0 +1,148 @@
+.progress-bar-box {
+
+    .progress-bar-header {
+        gap: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    .progress-bar-header-content {
+        flex: auto;
+    }
+
+    .mini-circle-progress{
+        margin: 0;
+        width: 80px;
+        height: 80px;
+
+        &::after{
+            font-size: 14px;
+        }
+
+    }
+
+    .progress-bar-title {
+        font-weight: 600;
+        font-size: 14px;
+
+        button {
+            width: 16px;
+            height: 16px;
+            padding: 0;
+            vertical-align: middle;
+            background-color: transparent;
+            margin-left: 4px;
+            border: none;
+            cursor: pointer;
+
+            i {
+                vertical-align: middle;
+            }
+
+        }
+
+    }
+
+    .progress-bar-description {
+        color: $primary-850;
+        margin-top: 4px;
+    }
+
+    .progress-bar-actions {
+        flex: none;
+
+        a {
+            font-weight: 500;
+            font-size: 16px;
+            padding: 8px;
+            text-decoration: none;
+
+            i {
+                font-size: 20px;
+                vertical-align: middle;
+                margin-left: 4px;
+            }
+
+            span {
+                vertical-align: middle;
+            }
+
+        }
+
+    }
+
+    &>.progress-bar-content {
+        margin-top: 12px;
+    }
+
+    // responsive   576
+    @media screen and (max-width:576px) {
+
+        .mini-circle-progress{
+            margin-bottom: 16px !important;
+        }
+
+        .progress-bar-header {
+            display: block;
+        }
+
+        .progress-bar-actions {
+            margin-top: 8px;
+        }
+
+    }
+
+}
+
+.progress-bar {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+
+    .progress-bar-track {
+        flex: auto;
+        position: relative;
+        padding: 2px 0;
+
+        .progress-bar-track-ps {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, $primary 33.33333%, $primary-200 33.33333%);
+        }
+
+        .progress-bar-dividers {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+
+            span {
+                flex: 1 1 0;
+                display: block;
+                height: 100%;
+                border-style: solid;
+                border-color: $white;
+                border-width: 0 2px 0 2px;
+
+                &:first-child {
+                    border-left: none;
+                }
+
+                &:last-child {
+                    border-right: none;
+                }
+
+            }
+
+        }
+
+    }
+
+    .progress-bar-percent {
+        flex: none;
+    }
+
+}

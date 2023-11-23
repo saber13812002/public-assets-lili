@@ -1,0 +1,228 @@
+.page-compare {
+
+    .page-title {
+        h1 {
+            margin: 32px 0 48px 0;
+        }
+    }
+
+    .compare {
+        overflow-x: auto;
+        overflow-y: hidden;
+        @extend %hide-scrollbar;
+
+        .compare-row {
+            gap: 24px;
+            display: flex;
+            align-items: stretch;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $primary-300;
+            }
+
+            &:not(:first-child) {
+
+                .compare-title,
+                .compare-item {
+                    padding: 32px 16px;
+                }
+            }
+
+        }
+
+        .compare-title {
+            flex: 0 0 auto;
+            width: 200px;
+        }
+
+        .compare-item {
+            flex: 0 0 auto;
+            width: 344px;
+        }
+
+        .add-new-model {
+            height: 100%;
+            padding-bottom: calc(1.33 * 100%) !important;
+
+            & > span {
+                span {
+                    display: block;
+                }
+            }
+
+        }
+
+        .compare-model {
+            border-color: $primary-300;
+            border-style: solid;
+            border-width: 1px 1px 0 1px;
+            padding: 16px;
+
+            .model-card {
+                margin-left: -6px;
+                margin-right: -6px;
+            }
+
+            .grid-content {
+                gap: 16px;
+                display: flex;
+                flex-direction: column;
+                margin-top: 16px;
+            }
+
+            .grid-inner-content {
+                gap: 16px;
+                display: flex;
+                align-items: center;
+            }
+
+            .grid-titles {
+                flex: auto;
+
+                .grid-title {
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+
+                .grid-secondary-title {
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: $primary-700;
+                    margin-top: 4px;
+                }
+
+            }
+
+            .grid-id {
+                flex: none;
+                font-size: 12px;
+                font-weight: 500;
+                background-color: $primary-200;
+                padding: 4px;
+            }
+
+            .grid-price-box {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .price {
+                    @include display-5(600);
+                }
+
+            }
+
+            .grid-status {
+                font-size: 12px;
+                font-weight: 500;
+                border: 1px solid;
+                border-radius: 99px;
+                padding: 2px 8px;
+
+                span {
+                    vertical-align: middle;
+                }
+
+                i {
+                    font-size: 12px;
+                    margin-right: 4px;
+                    vertical-align: middle;
+                }
+
+                &.success {
+                    color: $success;
+                }
+
+                &.danger {
+                    color: $danger;
+                }
+
+                &.info {
+                    color: $info;
+                }
+
+                &.warning {
+                    color: $warning;
+                }
+
+            }
+
+            .grid-footer {
+                gap: 12px;
+                display: flex;
+                align-items: center;
+
+                & > * {
+                    flex: auto;
+                }
+
+                .btn-icon {
+                    flex: none;
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid $primary !important;
+
+                    i::before {
+                        line-height: 48px;
+                    }
+
+                    &.btn-trash {
+                        color: $danger;
+                    }
+
+                }
+
+            }
+
+        }
+
+        .compare-details {
+            gap: 16px;
+            display: flex;
+            flex-direction: column;
+
+            .compare-detail-item {
+                display: flex;
+                align-items: start;
+                justify-content: space-between;
+
+                .compare-detail-label {
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: $primary-900;
+                }
+
+                .compare-detail-value {
+                    font-weight: 500;
+                    font-size: 16px;
+                }
+
+            }
+
+        }
+
+        .compare-descriptions {
+            @include title-1(500);
+        }
+
+        .compare-gallery {
+            padding: 0 32px;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            a {
+                display: block;
+
+                &:not(:first-child) {
+                    margin-top: 16px;
+                }
+            }
+        }
+
+    }
+
+}

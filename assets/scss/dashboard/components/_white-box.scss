@@ -1,0 +1,126 @@
+.white-box {
+    background: $white;
+    padding: 24px;
+
+    &.no-body{
+
+        .white-box-header{
+            margin-bottom: 0;
+        }
+
+        .white-box-content{
+            display: none;
+        }
+
+        .white-box-title{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+    }
+
+    &.expand-event{
+
+        .white-box-header{
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        .white-box-content{
+            display: none;
+        }
+
+        .white-box-title{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &:after{
+                content: "\e901";
+                font-size: 24px;
+                font-weight: normal;
+                font-family: 'liliana-icon' !important;
+                transition: all 0.25s ease-in-out;
+                margin-left: 8px;
+            }
+
+        }
+
+    }
+
+    &.expand-event.active{
+
+        .white-box-header{
+            margin-bottom: 24px;
+        }
+
+        .white-box-content{
+            display: block;
+        }
+
+        .white-box-title{
+            &:after{
+                transform: rotate(180deg);
+            }
+        }
+
+    }
+
+    .white-box-header {
+        gap: 24px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    .white-box-title {
+        flex: auto;
+        @include display-5(700);
+    }
+
+    .white-box-actions {
+        gap: 16px;
+        flex: none;
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+
+        a:not(.btn) {
+            font-weight: 500;
+            font-size: 16px;
+            text-decoration: none;
+            padding: 8px;
+
+            span {
+                vertical-align: middle;
+            }
+
+            i {
+                font-size: 20px;
+                vertical-align: middle;
+                margin-left: 4px;
+            }
+
+        }
+
+        .btn {
+            font-size: 14px;
+        }
+
+        .btn-icon {
+            background-color: $primary-300 !important;
+
+            i {
+                margin: 0 !important;
+            }
+
+        }
+
+    }
+
+    .message-required-field{
+        margin-bottom: 24px;
+    }
+
+}

@@ -1,0 +1,46 @@
+@import './mixins/grid';
+@import './mixins/type';
+@import './mixins/animation';
+
+@mixin padding-x($size) {
+    padding-left: $size * .5;
+    padding-right: $size * .5;
+}
+
+@mixin padding-y($size) {
+    padding-top: $size * .5;
+    padding-bottom: $size * .5;
+}
+
+@mixin padding-symmetry($x, $y) {
+    padding: ($y *.5) ($x *.5) ($y *.5) ($x *.5);
+}
+
+@mixin margin-x($size) {
+    margin-left: $size * .5;
+    margin-right: $size * .5;
+}
+
+@mixin margin-y($size) {
+    margin-top: $size * .5;
+    margin-bottom: $size * .5;
+}
+
+@mixin layer-stretch {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin make-overlay($opacity: 0.5) {
+    position: absolute;
+    @include layer-stretch;
+    background-color: rgba(0, 0, 0, $opacity);
+}
+
+@mixin make-overlay-fix($opacity: 0.5) {
+    position: fixed;
+    @include layer-stretch;
+    background-color: rgba(0, 0, 0, $opacity);
+}

@@ -1,0 +1,71 @@
+.field-type-upload {
+    height: auto;
+    display: block;
+    padding: 0;
+    border: none;
+
+    &.field--invalid {
+
+        .img-upload-ratio {
+            border-color: $danger !important;
+
+            .img-upload-label {
+                color: $danger;
+            }
+
+        }
+
+        .upload-drop-zone {
+            border-color: $danger;
+
+            .icon-upload,
+            .upload-title,
+            .upload-title b,
+            .upload-description {
+                color: $danger;
+            }
+
+            .icon-upload {
+                border-color: tint($danger, 25);
+                box-shadow: inset 0 0 0 4px #fff, inset 0 0 0 5px $danger;
+            }
+
+        }
+
+    }
+
+    &.field--valid {
+
+        .img-upload-ratio {
+            border-color: $success !important;
+
+            .img-upload-label {
+                color: $success;
+            }
+
+        }
+
+        .upload-drop-zone {
+            border-color: $success;
+
+            .icon-upload,
+            .upload-title,
+            .upload-title b,
+            .upload-description {
+                color: $success;
+            }
+
+            .icon-upload {
+                border-color: tint($success, 25);
+                box-shadow: inset 0 0 0 4px #fff, inset 0 0 0 5px $success;
+            }
+
+        }
+
+    }
+
+    label{
+        display: none;
+    }
+
+}

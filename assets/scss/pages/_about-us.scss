@@ -1,0 +1,117 @@
+.page-about-us {
+
+    header{
+        .menu,
+        .app-bar-container{
+            max-width: 1368px !important;
+        }
+    }
+
+    .section-content,
+    .section-content-mobile{
+        padding-top: 16px;
+    }
+
+    .section-our-services{
+        padding: 0;
+    }
+
+    .page-more-links{
+        padding: 48px 0 32px 0;
+    }
+
+    h1,
+    h2 {
+        font-weight: 600;
+        font-size: 21px;
+        margin-bottom: 16px;
+    }
+
+    h5 {
+        @include title-1();
+        margin-bottom: 16px;
+    }
+
+    p:not(:last-child) {
+        margin-bottom: 64px;
+        margin-top: 16px;
+    }
+
+    .our-services {
+
+        @media screen and (max-width:576px) {
+            grid-template-columns: repeat(1, 1fr);
+
+            .card:last-child{
+                grid-column: 1;
+            }
+
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        .our-services {
+            .card:last-child {
+                grid-column: 1 / span 2;
+            }
+        }
+    }
+
+    @media screen and (max-width:576px) {
+        .page-breadcrumb {
+            display: none;
+        }
+
+        .section-content,
+        .section-content-mobile{
+            padding-top: 16px;
+        }
+
+        .section-content{
+            h2{
+                display: none;
+            }
+
+            *:nth-child(2){
+                margin-top: 0;
+            }
+        }
+
+        .section-content-mobile{
+            display: block;
+            padding-bottom: 8px;
+
+            p{
+                margin-bottom: 0;
+            }
+
+        }
+
+        .our-services {
+            .card:last-child {
+                grid-column: 1;
+            }
+        }
+
+        .page-more-links{
+            padding: 48px 0 28px 0;
+        }
+
+        p:not(:last-child) {
+            margin-bottom: 32px;
+        }
+
+        h1,
+        h2,
+        h5 {
+            font-size: 14px;
+        }
+
+        .section:nth-child(4),
+        .section:nth-child(5) {
+            padding-top: 40px;
+        }
+
+    }
+
+}

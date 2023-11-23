@@ -1,0 +1,47 @@
+.form-section {
+    padding: 20px 0;
+
+    &.start,
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &.end,
+    &:last-child {
+        padding-bottom: 0;
+    }
+
+    &>.row {
+        margin: -16px -20px 0 -20px;
+
+        &>* {
+            margin-top: 16px;
+            padding: 0 20px;
+        }
+
+    }
+
+    &.space-lg {
+        &>.row {
+            margin: -24px -20px 0 -20px;
+
+            &>* {
+                margin-top: 24px;
+            }
+
+        }
+    }
+
+}
+
+.form-x-part {
+    gap: 16px;
+    display: flex;
+    align-items: center;
+
+    .form-x-part-label {
+        flex: none;
+        font-weight: 500;
+    }
+
+}

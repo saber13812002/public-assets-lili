@@ -1,0 +1,302 @@
+.job-offer-list {
+    border: 1px solid $primary-300;
+
+    .job-offer-item {
+        display: block;
+        padding: 16px;
+        text-decoration: none;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $primary-300;
+        }
+
+    }
+
+    .job-offer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        img {
+            flex: none;
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            object-position: center;
+        }
+
+    }
+
+    .job-offer-status {
+        flex: none;
+        font-size: 12px;
+        font-weight: 500;
+        border: 1px solid;
+        border-radius: 99px;
+        padding: 2px 8px;
+
+        i {
+            font-size: 12px;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        span {
+            vertical-align: middle;
+        }
+
+        &.rejected {
+            color: $danger;
+        }
+
+        &.expired {
+            color: #DD2828;
+            border-color: #FFEBEB;
+            background-color: #FFEBEB;
+        }
+
+        &.progress {
+            color: $info;
+        }
+
+        &.approved {
+            color: $success;
+        }
+
+    }
+
+    .job-offer-content {
+        font-weight: 500;
+
+        span {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            color: $primary-800;
+            margin-top: 2px;
+        }
+
+    }
+
+}
+
+.job-offer-grid {
+    column-gap: 1px;
+    row-gap: 1px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .job-offer-item {
+        background-color: $white;
+        outline: 1px solid $primary-300;
+        padding: 16px;
+    }
+
+    .job-offer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+
+        img {
+            flex: none;
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            object-position: center;
+        }
+
+    }
+
+    .job-offer-meta {
+        flex: none;
+    }
+
+    .job-offer-status {
+        font-size: 12px;
+        font-weight: 500;
+        border: 1px solid;
+        border-radius: 99px;
+        padding: 2px 8px;
+
+        i {
+            font-size: 12px;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        span {
+            vertical-align: middle;
+        }
+
+        &.rejected {
+            color: $danger;
+        }
+
+        &.expired {
+            color: #DD2828;
+            border-color: #FFEBEB;
+            background-color: #FFEBEB;
+        }
+
+        &.progress {
+            color: $info;
+        }
+
+        &.approved {
+            color: $success;
+        }
+
+    }
+
+    .job-offer-price {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 4px;
+        text-align: right;
+    }
+
+    .job-offer-content {
+        font-weight: 500;
+
+        span {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            color: $primary-800;
+            margin-top: 2px;
+        }
+
+    }
+
+    .job-offer-times {
+        gap: 12px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+
+        .job-offer-time-item {
+            gap: 8px;
+            display: flex;
+            flex-wrap: wrap;
+
+            .job-offer-date,
+            .job-offer-time {
+                display: flex;
+                align-items: center;
+                background-color: $primary-200;
+                border-radius: 99px;
+                padding: 4px 12px;
+
+                i {
+                    flex: none;
+                    font-weight: bold;
+                    font-size: 12px;
+                    color: $primary-850;
+                    vertical-align: middle;
+                    margin-right: 4px;
+                }
+
+                span {
+                    flex: auto;
+                    font-size: 14px;
+                    font-weight: 500;
+                    vertical-align: middle;
+                }
+
+            }
+
+        }
+
+    }
+
+    .job-offer-suggest-box {
+        padding: 16px;
+        border: 1px solid $primary-300;
+        margin-top: 12px;
+
+        .suggest-box-header {
+            gap: 16px;
+            display: flex;
+            align-items: center;
+
+            i {
+                flex: none;
+                display: block;
+                position: relative;
+                width: 40px;
+                height: 40px;
+                border: 1px solid;
+                border-radius: 100%;
+                box-shadow: inset 0 0 0 4px $white, inset 0 0 0 5px;
+
+                &::before {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    font-size: 18px;
+                    transform: translate(-50%, -50%);
+                }
+
+            }
+
+            .suggest-box-title {
+                flex: auto;
+                font-weight: 500;
+            }
+
+        }
+
+        &.success {
+            .suggest-box-header {
+                i {
+                    color: $success;
+                    border-color: tint($success, 25);
+                    box-shadow: inset 0 0 0 4px $white, inset 0 0 0 5px $success;
+                }
+            }
+        }
+
+        &.danger {
+            .suggest-box-header {
+                i {
+                    color: $danger;
+                    border-color: tint($danger, 25);
+                    box-shadow: inset 0 0 0 4px $white, inset 0 0 0 5px $danger;
+                }
+            }
+        }
+
+        &.info {
+            .suggest-box-header {
+                i {
+                    color: $info;
+                    border-color: tint($info, 25);
+                    box-shadow: inset 0 0 0 4px $white, inset 0 0 0 5px $info;
+                }
+            }
+        }
+
+        &.warning {
+            .suggest-box-header {
+                i {
+                    color: $warning;
+                    border-color: tint($warning, 25);
+                    box-shadow: inset 0 0 0 4px $white, inset 0 0 0 5px $warning;
+                }
+            }
+        }
+
+        .job-offer-times {
+            margin-top: 16px;
+        }
+
+    }
+
+    // responsive   576px
+    @media screen and (max-width:576px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}

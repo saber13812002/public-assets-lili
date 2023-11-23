@@ -1,0 +1,109 @@
+.req-message {
+    background-color: $white;
+    @include padding-symmetry(80px, 80px);
+
+    h2 {
+        text-align: center;
+        @include display-4(600);
+        margin-bottom: 32px;
+    }
+
+    img {
+        display: block;
+        width: 154px;
+        height: 154px;
+        margin: auto;
+    }
+
+    .req-message-icon {
+        display: block;
+        position: relative;
+        width: 154px;
+        height: 154px;
+        margin: auto;
+        color: $success;
+        border-radius: 100%;
+        border: 1px solid tint($success, 50);
+        box-shadow: inset 0 0 0 10px #fff, inset 0 0 0 11px tint($success, 25), inset 0 0 0 21px #fff, inset 0 0 0 22px $success;
+
+        &:before{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 64px;
+            transform: translate(-50%, -50%);
+        }
+
+    }
+
+    &.success{
+        .req-message-icon {
+            color: $success;
+            border-color: tint($success, 50);
+            box-shadow: inset 0 0 0 10px #fff, inset 0 0 0 11px tint($success, 25), inset 0 0 0 21px #fff, inset 0 0 0 22px $success;
+        }
+    }
+
+    &.danger{
+        .req-message-icon {
+            color: $danger;
+            border-color: tint($danger, 50);
+            box-shadow: inset 0 0 0 10px #fff, inset 0 0 0 11px tint($danger, 25), inset 0 0 0 21px #fff, inset 0 0 0 22px $danger;
+        }
+    }
+
+    &.info{
+        .req-message-icon {
+            color: $info;
+            border-color: tint($info, 50);
+            box-shadow: inset 0 0 0 10px #fff, inset 0 0 0 11px tint($info, 25), inset 0 0 0 21px #fff, inset 0 0 0 22px $info;
+        }
+    }
+
+    &.warning{
+        .req-message-icon {
+            color: $warning;
+            border-color: tint($warning, 50);
+            box-shadow: inset 0 0 0 10px #fff, inset 0 0 0 11px tint($warning, 25), inset 0 0 0 21px #fff, inset 0 0 0 22px $warning;
+        }
+    }
+
+    .req-message-title {
+        text-align: center;
+        @include display-5(600);
+        margin-top: 56px;
+    }
+
+    .req-message-description {
+        text-align: center;
+        @include title-2(500);
+        margin-top: 16px;
+        letter-spacing: -0.35px;
+    }
+
+    .req-message-actions {
+        margin-top: 48px;
+    }
+
+    // responsive   576
+    @media screen and (max-width: 576px) {
+
+        padding: 24px;
+
+        .req-message-title {
+            margin-top: 26px;
+            font-size: 16px;
+        }
+
+        .req-message-description {
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        .req-message-actions {
+            margin-top: 24px;
+        }
+
+    }
+
+}

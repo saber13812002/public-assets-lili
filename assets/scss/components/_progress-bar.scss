@@ -1,0 +1,30 @@
+.progress-bar{
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+
+    .progress-percent{
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .progress-track{
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background-color: $primary-500;
+    }
+
+    .progress-track-processed{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: $primary;
+        transition: all 1s ease;
+    }
+
+}

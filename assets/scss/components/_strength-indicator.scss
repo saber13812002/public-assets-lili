@@ -1,0 +1,118 @@
+.password-strength{
+    display: none;
+
+    &.active{
+        display: block;
+    }
+
+    .strength-indicator{
+        gap: 8px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+
+        .strength-steps{
+            gap:4px;
+            flex:auto;
+            display: flex;
+
+            span{
+                display: block;
+                flex: auto;
+                height: 4px;
+                background-color: $primary-300;
+                @include animation-1();
+            }
+
+        }
+
+        .strength-status{
+            width: 92px;
+            gap: 4px;
+            flex:none;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 150%;
+            @include animation-1();
+            color: $semantic-warning;
+
+            i{
+                flex: none;
+                font-size: 12px;
+                font-weight: bold;
+            }
+
+        }
+
+        &.level-1{
+
+            .strength-steps{
+                span:nth-child(1){
+                    background-color: $semantic-warning;
+                }
+            }
+
+            .strength-status{
+                color: $semantic-warning;
+            }
+
+        }
+
+        &.level-2{
+
+            .strength-steps{
+                span:nth-child(1),
+                span:nth-child(2){
+                    background-color: $primary;
+                }
+            }
+
+            .strength-status{
+                color: $primary;
+            }
+
+        }
+
+        &.level-3{
+
+            .strength-steps{
+                span:not(:last-child){
+                    background-color: $semantic-success;
+                }
+            }
+
+        }
+
+        &.level-4{
+
+            .strength-steps{
+                span{
+                    background-color: $semantic-success;
+                }
+            }
+
+        }
+
+        &.level-3,
+        &.level-4{
+            .strength-status{
+                color: $semantic-success;
+            }
+        }
+
+    }
+
+    .notifications-list{
+        margin-top: 16px;
+        display: none;
+
+        &.active{
+            display: block;
+        }
+
+    }
+
+}

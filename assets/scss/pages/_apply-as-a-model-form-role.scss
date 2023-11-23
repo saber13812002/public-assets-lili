@@ -1,0 +1,45 @@
+.page-apply-model-role{
+
+    .message-required-field{
+        padding-top: 0;
+        padding-bottom: 40px;
+    }
+
+    .field-type-checkbox{
+        label{
+            flex-direction: row-reverse;
+        }
+    }
+
+    .section-form{
+        padding-bottom: 0;
+    }
+
+    .section-action{
+        text-align: center;
+        padding-top: 0;
+
+        & > *{
+            padding-top: 40px;
+            border-top: 1px solid $primary-300;
+        }
+
+    }
+
+    @media screen and (max-width: 576px) {
+        .page-breadcrumb{
+            padding: 16px 0;
+        }
+
+        .section-form{
+            padding-top: 0;
+        }
+
+        .section-action{
+            .container-md{
+                padding-top: 32px;
+            }
+        }
+    }
+
+}

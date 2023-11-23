@@ -1,0 +1,269 @@
+.connections-list,
+.connections-list-2 {
+    border: 1px solid $primary-300;
+
+    .connection-item {
+        gap: 12px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 16px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $primary-300;
+        }
+
+        img {
+            flex: none;
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 100%;
+        }
+
+        .connection-title {
+            flex: auto;
+            font-weight: 500;
+            color: $primary-800;
+        }
+
+        &.my-request {
+            .connection-actions {
+                width: 50%;
+            }
+        }
+
+    }
+
+    .connection-content {
+        flex: auto;
+        font-size: 14px;
+        font-weight: 400;
+
+        b {
+            font-weight: 700;
+        }
+
+    }
+
+    .connection-actions {
+        gap: 8px;
+        flex: none;
+        display: flex;
+        align-content: center;
+
+        .btn {
+            flex: 1 1 0;
+        }
+
+        .connection-status {
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid;
+            border-radius: 99px;
+            padding: 2px 8px;
+
+            i {
+                font-size: 12px;
+                vertical-align: middle;
+                margin-right: 4px;
+            }
+
+            span {
+                vertical-align: middle;
+            }
+
+            &.rejected {
+                color: $danger;
+            }
+
+            &.expired {
+                color: #DD2828;
+                border-color: #FFEBEB;
+                background-color: #FFEBEB;
+            }
+
+            &.progress {
+                color: $info;
+            }
+
+            &.approved {
+                color: $success;
+            }
+
+        }
+
+    }
+
+}
+
+.connections-list-2 {
+
+    .connection-content {
+        gap: 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    // responsive 768
+    @media screen and (max-width:768px) {
+
+        .connection-item {
+            gap: 16px;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .connection-actions {
+            width: 100% !important;
+            justify-content: end;
+        }
+
+    }
+
+    // responsive   320
+    @media screen and (max-width: 320px){
+        .connection-actions{
+            flex-direction: column;
+        }
+    }
+
+}
+
+.connections-mini {
+    gap: 1px;
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    @extend %hide-scrollbar;
+    padding: 1px;
+
+    .connection-item {
+        flex: none;
+        display: block;
+        text-decoration: none;
+        outline: 1px solid $primary-300;
+        background-color: $white;
+        padding: 12px;
+    }
+
+    .connection-avatar {
+        display: block;
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        object-fit: cover;
+        object-position: center;
+        margin: auto;
+    }
+
+    .connection-label {
+        width: 96px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    // responsive   576
+    @media screen and (max-width:576px) {
+        margin-left: -24px;
+        margin-right: -24px;
+        padding-left: 24px;
+        padding-right: 24px;
+        max-width: none;
+    }
+
+}
+
+.connections-grid {
+    gap: 1px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .connection-item {
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+        outline: 1px solid $primary-300;
+        padding: 16px;
+    }
+
+    .connection-image {
+        width: 100%;
+        height: auto;
+        padding: 0 8px;
+    }
+
+    .connection-content {
+        display: flex;
+        align-items: center;
+    }
+
+    .connection-inner-content {
+        flex: auto;
+    }
+
+    .connection-id {
+        flex: none;
+        font-size: 12px;
+        font-weight: 500;
+        color: $primary-900;
+        background-color: $primary-200;
+        padding: 4px;
+    }
+
+    .connection-title {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .connection-sec-title {
+        font-size: 12px;
+        font-weight: 500;
+        color: $primary-700;
+        margin-top: 4px;
+    }
+
+    .connection-actions {
+        gap: 12px;
+        display: flex;
+        flex-direction: column;
+
+        .btn {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+    }
+
+    // responsive   992
+    @media screen and (max-width:992px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    // responsive   576
+    @media screen and (max-width:576px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+.alert-connect {
+    .alert-inner-content {
+        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px !important;
+
+        .field {
+            padding: 0;
+        }
+
+    }
+}

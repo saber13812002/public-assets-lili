@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'TheSeasons';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/TheSeasons/TheSeasons-Bd.otf"); }
+
+@font-face {
+  font-family: 'Amelaryas';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Amelaryas/Amelaryas.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Light.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Regular.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Medium.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-SemiBold.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.ttf"); }

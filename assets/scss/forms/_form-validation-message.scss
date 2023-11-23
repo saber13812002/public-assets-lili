@@ -1,0 +1,39 @@
+.form-validation-messages {
+    display: none;
+    margin-bottom: 40px;
+
+    h6 {
+        font-weight: 500;
+        margin: 0 0 12px 0;
+        color: $danger;
+    }
+
+    ul {
+        li {
+            @include title-1(400);
+            color: $danger;
+
+            &::before {
+                content: '*';
+                margin-right: 4px;
+            }
+
+        }
+    }
+
+}
+
+.field-error-msg {
+    display: none;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    color: #D24141;
+    margin-top: 8px;
+    text-align: left;
+
+    &.active {
+        display: block;
+    }
+
+}

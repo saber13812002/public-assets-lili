@@ -1,0 +1,295 @@
+.crop-frame {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $zindex-modal;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    .crop-content {
+        gap: 32px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        height: max-content;
+        width: 648px;
+        max-width: 100%;
+        max-height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background-color: $white;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 40px;
+        z-index: 2;
+    }
+
+    .crop-header {
+        @include display-5(600);
+        text-align: center;
+    }
+
+    .crop-footer {
+
+        .crop-ratios {
+            gap: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+
+            .crop-ratios-items {
+                gap: 8px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+
+                button {
+                    font-family: "Montserrat", sans-serif;
+                    font-weight: 600;
+                    color: $primary;
+                    border: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                    opacity: 0.5;
+
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+
+            }
+
+        }
+
+        .crop-zoom-level {
+            gap: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            .crop-zoom-progress {
+                width: 250px;
+
+                input {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    height: auto;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    pointer-events: none;
+                    vertical-align: middle;
+
+                    &::-webkit-slider-runnable-track {
+                        -webkit-appearance: none;
+                        height: 2px;
+                        background-color: $primary-400;
+                    }
+
+                    &::-moz-range-track {
+                        -moz-appearance: none;
+                        height: 2px;
+                        background-color: $primary-400;
+                    }
+
+                    &::-ms-track {
+                        appearance: none;
+                        height: 2px;
+                        background-color: $primary-400;
+                    }
+
+                    &::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 100%;
+                        pointer-events: all;
+                        background-color: $primary;
+                        margin-top: -7px;
+                    }
+
+                    &::-moz-range-thumb {
+                        -moz-appearance: none;
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 100%;
+                        pointer-events: all;
+                        background-color: $primary;
+                        margin-top: -7px;
+                    }
+
+                    &::-ms-thumb {
+                        appearance: none;
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 100%;
+                        pointer-events: all;
+                        background-color: $primary;
+                        margin-top: -7px;
+                    }
+                }
+
+            }
+
+        }
+
+        .crop-actions {
+            gap: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 32px auto 0 auto;
+
+            button {
+                flex: 1;
+                display: block;
+                max-width: 100%;
+            }
+
+            button.done {
+                width: 327px;
+                max-width: 327px;
+            }
+
+        }
+
+    }
+
+    .cropper-crop-box {
+
+        .cropper-dashed {
+            border-width: 1px;
+            border-style: solid;
+            border-color: $white;
+            opacity: 1;
+
+            &.dashed-h {
+                border-left: none;
+                border-right: none;
+            }
+
+            &.dashed-v {
+                border-top: none;
+                border-bottom: none;
+            }
+
+        }
+
+        .cropper-point {
+            opacity: 0;
+        }
+
+        .cropper-view-box {
+            outline-color: transparent;
+        }
+
+        .cropper-face {
+            opacity: 0;
+        }
+
+        .cropper-line {
+            opacity: 1;
+            background-color: transparent;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                background-color: $white;
+            }
+
+            &.line-n,
+            &.line-s {
+                left: -3px;
+                right: -3px;
+                width: auto;
+
+                &::before,
+                &::after{
+                    top: 0;
+                    width: 60px;
+                    height: 100%;
+                    max-width: 100%;
+                }
+
+                &::before {
+                    left: 0;
+                }
+
+                &::after {
+                    right: 0;
+                }
+
+            }
+
+            &.line-w,
+            &.line-e {
+                top: -3px;
+                bottom: -3px;
+                height: auto;
+
+                &::before,
+                &::after{
+                    width: 100%;
+                    height: 60px;
+                    max-height: 100%;
+                }
+
+                &::before {
+                    top: 0;
+                    left: 0;
+                }
+
+                &::after {
+                    bottom: 0;
+                    right: 0;
+                }
+
+            }
+
+        }
+
+    }
+
+    .crop-loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        gap: 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        span{
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .progress-bar{
+            width: 200px;
+            padding: 0 24px;
+        }
+
+    }
+
+}

@@ -1,0 +1,65 @@
+.page-apply-model-success {
+
+    #content {
+        padding: 0 !important
+    }
+
+    .req-message {
+        width: 512px;
+        max-width: 100%;
+        margin: auto;
+
+        .req-message-actions {
+            a {
+                width: 200px;
+                display: block;
+                margin: auto;
+            }
+        }
+
+    }
+
+    // responsive   576
+    @media screen and (max-width: 576px) {
+
+        .req-message-content {
+
+            .req-message-title{
+                font-size:19px;
+                margin-top: 24px;
+            }
+
+            .req-message-description {
+                font-size: 14px;
+                flex: auto;
+                margin-top: 16px;
+            }
+
+            .req-message-actions {
+                a {
+                    width: 100%;
+                }
+            }
+
+        }
+
+        #footer {
+            display: none;
+        }
+
+        .req-message {
+            padding: 12px 0 12px 0;
+
+            h2 {
+                display: none;
+            }
+
+            .req-message-actions {
+                margin-top: 48px;
+            }
+
+        }
+
+    }
+
+}

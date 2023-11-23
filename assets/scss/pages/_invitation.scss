@@ -1,0 +1,107 @@
+.page-invitation {
+
+    .grid-photo {
+        .grid-item {
+            width: calc(100% / 4);
+        }
+    }
+
+    &:not(.page-modeling-offer) {
+
+        .page-title {
+            h1 {
+                margin: 32px 0 48px 0;
+            }
+        }
+
+        .notifications-list {
+            border: none !important;
+            outline: 1px solid $primary-300;
+        }
+
+        .grid-photo-2 {
+            .grid-item {
+
+                .grid-footer {
+                    width: auto;
+
+                    a {
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: $danger;
+                        text-decoration: none;
+                        padding: 8px;
+
+                        i {
+                            font-size: 24px;
+                            vertical-align: middle;
+                            margin-right: 4px;
+                        }
+
+                        span {
+                            vertical-align: middle;
+                            text-decoration: underline;
+                        }
+
+                    }
+
+                }
+
+            }
+        }
+
+        .invite-detail-box {
+            padding: 24px;
+            background-color: $primary-200;
+        }
+
+        .invite-detail-actions {
+            margin-top: 24px;
+        }
+
+        .invite-detail-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $primary-400;
+            }
+
+            .item-label{
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            .item-value{
+                font-size: 16px;
+                font-weight: 500;
+
+                &.price{
+                    font-size: 19px;
+                    font-weight: 600;
+                }
+
+            }
+
+        }
+
+    }
+
+    // responsive   576
+    @media screen and (max-width:576px) {
+
+        .notifications-list{
+            margin-top: 20px;
+        }
+
+        .grid-photo {
+            .grid-item {
+                width: calc(100% / 2);
+            }
+        }
+
+    }
+
+}

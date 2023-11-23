@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'TheSeasons';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/TheSeasons/TheSeasons-Bd.otf"); }
+
+@font-face {
+  font-family: 'Amelaryas';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Amelaryas/Amelaryas.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Light.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Regular.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Medium.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-SemiBold.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.ttf"); }
+
+@page {
+  size: A4 landscape;
+  margin: 0; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  background-color: #e2e2e2; }
+
+body {
+  width: 842px;
+  height: 595px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 1.2;
+  margin: auto;
+  padding: 0 48px;
+  background-color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  transform: translateY(98px) scale(1.33333); }
+
+#header {
+  flex: none;
+  display: flex;
+  align-items: center;
+  margin-top: 14px; }
+  #header #brand {
+    flex: none;
+    display: flex;
+    flex-direction: column; }
+    #header #brand img {
+      height: 46px;
+      margin-bottom: 4px; }
+    #header #brand span {
+      font-size: 6px;
+      line-height: 150%;
+      letter-spacing: 0.72px;
+      text-transform: uppercase; }
+  #header .profile-name {
+    flex: auto; }
+    #header .profile-name .name {
+      gap: 8px;
+      display: flex;
+      align-items: center;
+      font-family: 'TheSeasons', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 150%;
+      text-transform: uppercase;
+      color: #000000; }
+    #header .profile-name #profile_id {
+      font-family: "Montserrat", sans-serif;
+      font-size: 8px;
+      font-weight: 500;
+      line-height: 150%;
+      padding: 2px 4px;
+      text-transform: none;
+      background-color: #F5F5F5; }
+    #header .profile-name .jp-name {
+      font-size: 10px;
+      line-height: 150%;
+      color: #646464; }
+    #header .profile-name .profile-meta {
+      gap: 12px;
+      display: flex;
+      align-items: center; }
+      #header .profile-name .profile-meta .jp-name {
+        flex: none; }
+      #header .profile-name .profile-meta .skill-tags {
+        flex: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px; }
+        #header .profile-name .profile-meta .skill-tags span {
+          font-size: 8px; }
+
+#footer {
+  flex: none;
+  margin: 6px 0 4px 0; }
+  #footer .contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px; }
+    #footer .contacts .contacts-item {
+      gap: 2px;
+      flex: none;
+      display: flex;
+      font-size: 7px;
+      line-height: 150%; }
+      #footer .contacts .contacts-item .name {
+        color: #646464; }
+      #footer .contacts .contacts-item .value {
+        color: #0D0D0D; }
+
+.vertical-divider {
+  width: 1px;
+  height: 8px;
+  background-color: #C2C2C2; }
+
+.model-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0; }
+  .model-meta .meta-item {
+    gap: 4px;
+    flex: none;
+    display: flex;
+    font-size: 8px;
+    line-height: 150%; }
+    .model-meta .meta-item .name {
+      color: #646464; }
+    .model-meta .meta-item .value {
+      color: #000000;
+      font-weight: 500; }
+
+.model-gallery {
+  gap: 22px;
+  flex: auto;
+  display: flex;
+  overflow: hidden; }
+  .model-gallery .model-base-image {
+    flex: none; }
+    .model-gallery .model-base-image img {
+      width: auto;
+      height: 100%; }
+  .model-gallery .model-gallery-images {
+    flex: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    column-gap: 9px;
+    row-gap: 9px; }
+    .model-gallery .model-gallery-images img {
+      width: 100%; }

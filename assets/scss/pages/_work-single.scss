@@ -1,0 +1,55 @@
+.page-work-single{
+
+    .page-title{
+        text-align: center;
+
+        h1{
+            margin-bottom: 24px;
+        }
+
+        .brand-name{
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 500;
+            background-color: $primary-200;
+            color: $primary;
+            padding: 4px 12px;
+        }
+
+        .page-metas{
+            column-gap: 16px;
+            row-gap: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 12px;
+
+            .meta{
+                gap: 8px;
+                display: flex;
+                font-size: 12px;
+                align-items: center;
+                color: $primary;
+            }
+
+            .meta-name{
+                font-weight: 500;
+            }
+
+        }
+
+    }
+
+    .section-members{
+        .heading{
+            margin-bottom: 24px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .page-title{
+            margin-top: 24px;
+        }
+    }
+
+}

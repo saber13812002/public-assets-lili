@@ -1,0 +1,30 @@
+.form-email-model {
+
+    .account-form {
+        padding: 40px 24px;
+
+        .form-footer {
+            margin-top: 16px;
+        }
+
+    }
+
+    // responsive   576
+    @media screen and (max-width:576px) {
+
+        #footer{
+            display: none;
+        }
+
+        .account-form {
+            padding: 0;
+
+            .form-footer {
+                margin-top: 8px;
+            }
+
+        }
+
+    }
+
+}

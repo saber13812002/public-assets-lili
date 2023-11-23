@@ -1,0 +1,329 @@
+.card {
+    background-color: $primary-200;
+    @include padding-x(32px);
+    @include padding-y(36px);
+
+    i {
+        font-size: 24px;
+    }
+
+    .card-title {
+        @include title-2(600);
+        margin-top: 8px;
+    }
+
+    .card-content {
+        @include title-2();
+        margin-top: 8px;
+    }
+
+    @media screen and (max-width:576px) {
+        @include padding-x(32px);
+        @include padding-y(48px);
+
+        .card-title,
+        .card-content {
+            font-size: 14px;
+        }
+    }
+}
+
+// video card
+.video-card {
+
+    a {
+        text-decoration: none;
+    }
+
+    &:hover {
+        .card-thumbnail {
+            i {
+                opacity: 1;
+            }
+        }
+    }
+
+    .card-thumbnail {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 60px;
+            color: $white;
+            opacity: 0.75;
+            transform: translate(-50%, -50%);
+            @include animation-1();
+        }
+    }
+
+    .card-content {
+        display: flex;
+        margin-top: 8px;
+    }
+
+    .card-title {
+        flex: auto;
+        @include title-1(500);
+        color: $primary;
+        @include padding-symmetry(16px, 0);
+    }
+
+    .card-time {
+        @include title-2();
+        color: $primary-900;
+    }
+
+    @media screen and (max-width:576px) {
+        .card-thumbnail {
+            i {
+                font-size: 40px;
+            }
+        }
+
+        .card-content {
+            margin-top: 4px;
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .card-time {
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+
+}
+
+// audio card
+.audio-card {
+
+    position: relative;
+    padding: 16px;
+    border: 1px solid $primary-500;
+
+    .card-content {
+        gap: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    .card-title {
+        flex: auto;
+        @include title-1(500);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .card-time {
+        @include title-3(500);
+        color: $primary-600;
+        flex: none;
+
+        span.current-time {
+            color: $primary;
+        }
+    }
+
+    .card-controllers {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .btn.pause-btn {
+        display: none;
+    }
+
+    &.play {
+        .btn.play-btn {
+            display: none;
+        }
+
+        .btn.pause-btn {
+            display: block;
+        }
+    }
+
+    .card-volume,
+    .slider-control {
+        position: relative;
+        flex: auto;
+
+        input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: absolute;
+            width: 100%;
+            height: auto;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            padding: 0;
+            pointer-events: none;
+            z-index: 2;
+
+            &::-webkit-slider-runnable-track {
+                -webkit-appearance: none;
+                height: 2px;
+            }
+
+            &::-moz-range-track {
+                -moz-appearance: none;
+                height: 2px;
+            }
+
+            &::-ms-track {
+                appearance: none;
+                height: 2px;
+            }
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 16px;
+                height: 16px;
+                border-radius: 100%;
+                border: 2px solid $primary;
+                pointer-events: all;
+                background-color: $white;
+                box-shadow: none;
+                margin-top: -7px;
+            }
+
+            &::-moz-range-thumb {
+                -moz-appearance: none;
+                width: 16px;
+                height: 16px;
+                border-radius: 100%;
+                border: 2px solid $primary;
+                pointer-events: all;
+                background-color: $white;
+                box-shadow: none;
+                margin-top: -7px;
+            }
+
+            &::-ms-thumb {
+                appearance: none;
+                width: 16px;
+                height: 16px;
+                border-radius: 100%;
+                border: 2px solid $primary;
+                pointer-events: all;
+                background-color: $white;
+                box-shadow: none;
+                margin-top: -7px;
+            }
+        }
+
+        .slider-track {
+            position: relative;
+            width: 100%;
+            height: 2px;
+            background-color: $primary-500;
+            z-index: 1;
+        }
+
+        .slider-track-process,
+        .slider-track-buffer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: $primary;
+            z-index: 2;
+        }
+
+        .slider-track-buffer {
+            opacity: 0.5;
+            z-index: 1;
+        }
+    }
+
+    .card-volume{
+        flex: none;
+        display: flex;
+        align-items: center;
+
+        &:hover{
+            .card-volume-progress{
+                width: 80px;
+
+                input{
+                    &::-webkit-slider-thumb{
+                        opacity: 1;
+                        transform: scale(1);
+                        visibility: visible;
+                    }
+                }
+
+            }
+        }
+
+        .card-volume-progress{
+            flex: none;
+            position: relative;
+            width: 0;
+            transition: all 0.2s ease-in-out;
+
+            input{
+                &::-webkit-slider-thumb{
+                    opacity: 0;
+                    transform: scale(0.5);
+                    visibility: hidden;
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+
+        }
+
+        .volume-mute-btn{
+            display: none;
+        }
+
+    }
+
+    .card-loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        gap: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9;
+    }
+
+    @media screen and (max-width:576px) {
+
+        @include padding-symmetry(32px, 24px);
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .card-time {
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+    }
+
+}
