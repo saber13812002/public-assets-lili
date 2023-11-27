@@ -9,6 +9,7 @@ let currentSelect = null;
 // new element repeater
 let elementRepeater = [];
 
+
 /**
  * generate unique id
  *
@@ -1288,9 +1289,9 @@ function uid() {
                             openOnLibrary: true,
                             limitSize: limitSize === undefined? 10 : parseFloat(limitSize),
                             cropRatio: ratio === undefined? [] : ratio,
-                            saveUrl: 'https://liliana.asensive.ir/api/uploadphoto/',
-                            fetchUrl: 'https://liliana.asensive.ir/api/gallery/photo/',
-                            uploadUrl: 'https://liliana.asensive.ir/api/gallery/photo-upload',
+                            saveUrl: '/api/uploadphoto',
+                            fetchUrl: '/api/gallery/photo/',
+                            uploadUrl: '/api/gallery/photo-upload',
                             translate: {
                                 uploadZoneTitle: `<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> ${editType}`,
                                 uploadZoneDescription: `Allowed format: ${formatDesc} (Up to: 1 photo/${limitSize} Mb)`,
@@ -1371,9 +1372,9 @@ function uid() {
                             openOnLibrary: true,
                             limitSize: limitSize === undefined? 10 : parseFloat(limitSize),
                             cropRatio: ratio === undefined? [] : ratio,
-                            saveUrl: 'https://liliana.asensive.ir/api/uploadphoto/',
-                            fetchUrl: 'https://liliana.asensive.ir/api/gallery/photo/',
-                            uploadUrl: 'https://liliana.asensive.ir/api/gallery/photo-upload',
+                            saveUrl: '/api/uploadphoto',
+                            fetchUrl: '/api/gallery/photo/',
+                            uploadUrl: '/api/gallery/photo-upload',
                             translate: {
                                 uploadZoneTitle: `<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> ${data[0].type}`,
                                 uploadZoneDescription: `Allowed format: ${formatDesc} (Up to: 1 photo/${limitSize} Mb)`,
@@ -1482,7 +1483,7 @@ function uid() {
                             limitSize: limitSize === undefined? 10 : parseFloat(limitSize),
                             wizard: wizard,
                             upload: true,
-                            uploadUrl: 'https://liliana.asensive.ir/api/uploadphoto/',
+                            uploadUrl: '/api/uploadphoto',
                             title: wizardTitle,
                             description: wizardDescription,
                             tags: wizardTags,
@@ -1615,7 +1616,7 @@ function uid() {
 
                         itemElement.append(loading);
                         $.ajax({
-                            url: 'https://liliana.asensive.ir/api/uploadphoto/',
+                            url: '/api/uploadphoto',
                             type: "POST",
                             data: item.id,
                             success: function(data) {
@@ -1658,9 +1659,9 @@ function uid() {
                             limitSize: limitSize === undefined? 10 : parseFloat(limitSize),
                             cropRatio: ratio === undefined? [] : ratio,
                             useTitle: item.type === 'photo'? false : true,
-                            saveUrl: 'https://liliana.asensive.ir/api/uploadphoto/',
-                            fetchUrl: 'https://liliana.asensive.ir/api/gallery/photo/',
-                            uploadUrl: 'https://liliana.asensive.ir/api/gallery/photo-upload',
+                            saveUrl: '/api/uploadphoto',
+                            fetchUrl: '/api/gallery/photo/',
+                            uploadUrl: '/api/gallery/photo-upload',
                             translate: {
                                 uploadZoneTitle: `<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> ${item.type}`,
                                 uploadZoneDescription: `Allowed format: ${formatDesc} (Up to: 1 photo/${limitSize} Mb)`,
@@ -3012,7 +3013,7 @@ function fieldDetector() {
             let max = parseInt($(input[0]).attr('max'));
             let subFix = _this.data('sub-fix');
 
-            // function 
+            // function
             function setValueSlider(element, secondary, isLast) {
 
                 let val = parseInt($(element).val());
