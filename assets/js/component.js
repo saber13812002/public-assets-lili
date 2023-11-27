@@ -3,6 +3,11 @@
  */
 "use strict";
 
+
+let _env = "sh";
+
+let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
+
 // global variable
 let currentSelect = null;
 
@@ -1289,9 +1294,9 @@ function uid() {
                             openOnLibrary: true,
                             limitSize: limitSize === undefined? 10 : parseFloat(limitSize),
                             cropRatio: ratio === undefined? [] : ratio,
-                            saveUrl: '/api/uploadphoto',
-                            fetchUrl: '/api/gallery/photo/',
-                            uploadUrl: '/api/gallery/photo-upload',
+                            saveUrl: base_url + '/api/uploadphoto',
+                            fetchUrl: base_url + '/api/gallery/photo/',
+                            uploadUrl: base_url + '/api/gallery/photo-upload',
                             translate: {
                                 uploadZoneTitle: `<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> ${editType}`,
                                 uploadZoneDescription: `Allowed format: ${formatDesc} (Up to: 1 photo/${limitSize} Mb)`,
@@ -1372,9 +1377,9 @@ function uid() {
                             openOnLibrary: true,
                             limitSize: limitSize === undefined? 10 : parseFloat(limitSize),
                             cropRatio: ratio === undefined? [] : ratio,
-                            saveUrl: '/api/uploadphoto',
-                            fetchUrl: '/api/gallery/photo/',
-                            uploadUrl: '/api/gallery/photo-upload',
+                            saveUrl: base_url + '/api/uploadphoto',
+                            fetchUrl: base_url + '/api/gallery/photo/',
+                            uploadUrl: base_url + '/api/gallery/photo-upload',
                             translate: {
                                 uploadZoneTitle: `<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> ${data[0].type}`,
                                 uploadZoneDescription: `Allowed format: ${formatDesc} (Up to: 1 photo/${limitSize} Mb)`,
@@ -1483,7 +1488,7 @@ function uid() {
                             limitSize: limitSize === undefined? 10 : parseFloat(limitSize),
                             wizard: wizard,
                             upload: true,
-                            uploadUrl: '/api/uploadphoto',
+                            uploadUrl: base_url + '/api/uploadphoto',
                             title: wizardTitle,
                             description: wizardDescription,
                             tags: wizardTags,
@@ -1616,7 +1621,7 @@ function uid() {
 
                         itemElement.append(loading);
                         $.ajax({
-                            url: '/api/uploadphoto',
+                            url: base_url + '/api/uploadphoto',
                             type: "POST",
                             data: item.id,
                             success: function(data) {
@@ -1659,9 +1664,9 @@ function uid() {
                             limitSize: limitSize === undefined? 10 : parseFloat(limitSize),
                             cropRatio: ratio === undefined? [] : ratio,
                             useTitle: item.type === 'photo'? false : true,
-                            saveUrl: '/api/uploadphoto',
-                            fetchUrl: '/api/gallery/photo/',
-                            uploadUrl: '/api/gallery/photo-upload',
+                            saveUrl: base_url + '/api/uploadphoto',
+                            fetchUrl: base_url + '/api/gallery/photo/',
+                            uploadUrl: base_url + '/api/gallery/photo-upload',
                             translate: {
                                 uploadZoneTitle: `<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> ${item.type}`,
                                 uploadZoneDescription: `Allowed format: ${formatDesc} (Up to: 1 photo/${limitSize} Mb)`,
