@@ -4,11 +4,6 @@
 "use strict";
 
 
-let _env = "sh";
-
-let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
-
-
 (function ($) {
 
     let DOC = $(document);
@@ -233,7 +228,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
 
             btnRemove.on('click', function () {
                 $.ajax({
-                    url:'your url',
+                    url: env.baseURL + 'your url',
                     type: 'post',
                     contentType: 'application/json',
                     dataType: 'json',
@@ -295,7 +290,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
 
             btnConfirm.on('click', function () {
                 $.ajax({
-                    url: 'your url',
+                    url: env.baseURL + 'your url',
                     type: 'post',
                     contentType: 'application/json',
                     dataType: 'json',
@@ -311,7 +306,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
 
             btnDelete.on('click', function () {
                 $.ajax({
-                    url: 'your url',
+                    url: env.baseURL + 'your url',
                     type: 'post',
                     contentType: 'application/json',
                     dataType: 'json',
@@ -474,7 +469,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
             $(this).html('Saving...').addClass('disable');
             let sendData = getAreaFieldData($('#ds_content'));
             $.ajax({
-                url: base_url +  "/api/uploadphoto",
+                url: env.baseURL +  "/api/uploadphoto",
                 type: "POST",
                 data: {
                     page: page,
@@ -574,7 +569,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
                     parent.append('<div class="item-loading"><div class="loader"></div><div class="progress-bar"><div class="progress-percent"><span>0</span>%</div><div class="progress-track"><div class="progress-track-processed"></div></div></div></div>');
 
                     $.ajax({
-                        url: base_url +  "/api/uploadphoto",
+                        url: env.baseURL +  "/api/uploadphoto",
                         type: "POST",
                         data: formData,
                         processData: false,
@@ -639,7 +634,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
                 btnOk.addClass('disable').html('Waiting...');
                 btnCancel.hide();
                 $.ajax({
-                    url: base_url + "/",
+                    url: env.baseURL + "/",
                     type: "POST",
                     data: {id: parent.attr('data-img-id')}, // You can pass additional data if needed
                     success: function(data) {
@@ -692,9 +687,9 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
                 limitSize: 10,
                 titleRequired: false,
                 cropRatio: ratio?ratio:3/4,
-                saveUrl: base_url +  '/api/gallery/photo-save',
-                fetchUrl: base_url +  '/api/gallery/photo/',
-                uploadUrl: base_url +  '/api/gallery/photo-upload',
+                saveUrl: env.baseURL +  '/api/gallery/photo-save',
+                fetchUrl: env.baseURL +  '/api/gallery/photo/',
+                uploadUrl: env.baseURL +  '/api/gallery/photo-upload',
                 data: {id: parent.attr('data-img-id')},
                 translate: {
                     uploadZoneTitle: '<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> your photo',
@@ -718,9 +713,9 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
                 limitSize: 10,
                 titleRequired: false,
                 cropRatio: ratio?ratio:3/4,
-                saveUrl: base_url +  '/api/gallery/photo-save',
-                fetchUrl: base_url +  '/api/gallery/photo/',
-                uploadUrl: base_url +  '/api/gallery/photo-upload',
+                saveUrl: env.baseURL +  '/api/gallery/photo-save',
+                fetchUrl: env.baseURL +  '/api/gallery/photo/',
+                uploadUrl: env.baseURL +  '/api/gallery/photo-upload',
                 data: {for: itemSelected.attr('data-for')},
                 translate: {
                     uploadZoneTitle: '<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> your photo',
@@ -743,9 +738,9 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
                 multiple: true,
                 limit: 20,
                 cropRatio: '3/4,4/3',
-                saveUrl: base_url +  '/api/gallery/photo-save',
-                fetchUrl: base_url +  '/api/gallery/photo/',
-                uploadUrl: base_url +  '/api/gallery/photo-upload',
+                saveUrl: env.baseURL +  '/api/gallery/photo-save',
+                fetchUrl: env.baseURL +  '/api/gallery/photo/',
+                uploadUrl: env.baseURL +  '/api/gallery/photo-upload',
                 data: {},
                 translate: {
                     uploadZoneTitle: '<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> your photo',
@@ -766,9 +761,9 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
                 multiple: true,
                 limit: 500,
                 cropRatio: '3/4,4/3',
-                saveUrl: base_url +  '/api/gallery/photo-save',
-                fetchUrl: base_url +  '/api/gallery/photo/',
-                uploadUrl: base_url +  '/api/gallery/photo-upload',
+                saveUrl: env.baseURL +  '/api/gallery/photo-save',
+                fetchUrl: env.baseURL +  '/api/gallery/photo/',
+                uploadUrl: env.baseURL +  '/api/gallery/photo-upload',
                 data: {},
                 translate: {
                     uploadZoneTitle: '<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> your Job Experiences photo',
@@ -789,9 +784,9 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
                 multiple: true,
                 limit: 500,
                 cropRatio: '3/4,4/3',
-                saveUrl: base_url +  '/api/gallery/photo-save',
-                fetchUrl: base_url +  '/api/gallery/photo/',
-                uploadUrl: base_url +  '/api/gallery/photo-upload',
+                saveUrl: env.baseURL +  '/api/gallery/photo-save',
+                fetchUrl: env.baseURL +  '/api/gallery/photo/',
+                uploadUrl: env.baseURL +  '/api/gallery/photo-upload',
                 data: {},
                 translate: {
                     uploadZoneTitle: '<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> your Skill photo',
@@ -1035,9 +1030,9 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
             uploadWithUrl: true,
             multiple: !$(this).hasClass('replace-new-video'),
             openOnLibrary: $(this).hasClass('replace-new-video'),
-            saveUrl: base_url +  '/api/gallery/video-save',
-            fetchUrl: base_url +  '/api/gallery/video/',
-            uploadUrl: base_url +  '/api/gallery/video-upload',
+            saveUrl: env.baseURL +  '/api/gallery/video-save',
+            fetchUrl: env.baseURL +  '/api/gallery/video/',
+            uploadUrl: env.baseURL +  '/api/gallery/video-upload',
             translate: {
                 uploadZoneTitle: '<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> other video',
                 uploadZoneDescription: 'Allowed format: MP4 (Up to: 1 photo/20 Mb)',
@@ -1063,9 +1058,9 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
             uploadWithUrl: true,
             multiple: !$(this).hasClass('replace-new-video'),
             openOnLibrary: $(this).hasClass('replace-new-video'),
-            saveUrl: base_url +  '/api/gallery/video-save',
-            fetchUrl: base_url +  '/api/gallery/video/',
-            uploadUrl: base_url +  '/api/gallery/video-upload',
+            saveUrl: env.baseURL +  '/api/gallery/video-save',
+            fetchUrl: env.baseURL +  '/api/gallery/video/',
+            uploadUrl: env.baseURL +  '/api/gallery/video-upload',
             translate: {
                 uploadZoneTitle: '<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> polaroid video',
                 uploadZoneDescription: 'Allowed format: MP4 (Up to: 1 photo/50 Mb)',
@@ -1091,9 +1086,9 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
             uploadWithUrl: true,
             multiple: !$(this).hasClass('replace-new-video'),
             openOnLibrary: $(this).hasClass('replace-new-video'),
-            saveUrl: base_url +  '/api/gallery/video-save',
-            fetchUrl: base_url +  '/api/gallery/video/',
-            uploadUrl: base_url +  '/api/gallery/video-upload',
+            saveUrl: env.baseURL +  '/api/gallery/video-save',
+            fetchUrl: env.baseURL +  '/api/gallery/video/',
+            uploadUrl: env.baseURL +  '/api/gallery/video-upload',
             translate: {
                 uploadZoneTitle: '<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> introduction video',
                 uploadZoneDescription: 'Allowed format: MP4 (Up to: 1 photo/50 Mb)',
@@ -1120,9 +1115,9 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
             uploadWithUrl: true,
             multiple: !$(this).hasClass('replace-new-video'),
             openOnLibrary: $(this).hasClass('replace-new-video'),
-            saveUrl: base_url +  '/api/gallery/video-save',
-            fetchUrl: base_url +  '/api/gallery/video/',
-            uploadUrl: base_url +  '/api/gallery/video-upload',
+            saveUrl: env.baseURL +  '/api/gallery/video-save',
+            fetchUrl: env.baseURL +  '/api/gallery/video/',
+            uploadUrl: env.baseURL +  '/api/gallery/video-upload',
             translate: {
                 uploadZoneTitle: '<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> Job Experiences video',
                 uploadZoneDescription: 'Allowed format: MP4 (Up to: 1 photo/70 Mb)',
@@ -1149,9 +1144,9 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
             uploadWithUrl: true,
             multiple: !$(this).hasClass('replace-new-video'),
             openOnLibrary: $(this).hasClass('replace-new-video'),
-            saveUrl: base_url +  '/api/gallery/video-save',
-            fetchUrl: base_url +  '/api/gallery/video/',
-            uploadUrl: base_url +  '/api/gallery/video-upload',
+            saveUrl: env.baseURL +  '/api/gallery/video-save',
+            fetchUrl: env.baseURL +  '/api/gallery/video/',
+            uploadUrl: env.baseURL +  '/api/gallery/video-upload',
             translate: {
                 uploadZoneTitle: '<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> Skills video',
                 uploadZoneDescription: 'Allowed format: MP4 (Up to: 1 photo/70 Mb)',
@@ -1189,7 +1184,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
             clearFocus();
 
             $.ajax({
-                url: base_url +  "/",
+                url: env.baseURL +  "/",
                 type: "POST",
                 data: id,
                 success: function(data) {
@@ -1230,9 +1225,9 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
             type: 'audio',
             multiple: true,
             openOnLibrary: false,
-            saveUrl: base_url +  '/api/gallery/audio-save',
-            fetchUrl: base_url +  '/api/gallery/audio/',
-            uploadUrl: base_url +  '/api/gallery/audio-upload',
+            saveUrl: env.baseURL +  '/api/gallery/audio-save',
+            fetchUrl: env.baseURL +  '/api/gallery/audio/',
+            uploadUrl: env.baseURL +  '/api/gallery/audio-upload',
             translate: {
                 uploadZoneTitle: '<b>Click to upload</b> <span class="visible-desktop">or drag and drop</span> your audio',
                 uploadZoneDescription: 'Allowed format: MP3 (Up to: 1 photo/10 Mb)',
@@ -1271,7 +1266,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
             clearFocus();
 
             $.ajax({
-                url: base_url +  "/",
+                url: env.baseURL +  "/",
                 type: "POST",
                 data: id,
                 success: function(data) {
@@ -1347,7 +1342,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
 
         _button.html('Waiting...').addClass('disable');
         $.ajax({
-            url: base_url +  "/api/uploadphoto",
+            url: env.baseURL +  "/api/uploadphoto",
             type: "POST",
             data: data,
             success: function(data) {
@@ -1374,7 +1369,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
                 content.find('.form-resend-timer').on('click',function(){
                     if($(this).hasClass('timer-active')) return;
                     $.ajax({
-                        url: base_url +  "/api/uploadphoto",
+                        url: env.baseURL +  "/api/uploadphoto",
                         type: "POST",
                         data: data,
                         success: function(data) {
@@ -1398,7 +1393,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
 
                     buttonVerify.html('Waiting...').addClass('disable');
                     $.ajax({
-                        url: base_url +  "/api/uploadphoto",
+                        url: env.baseURL +  "/api/uploadphoto",
                         type: "POST",
                         data: data,
                         success: function(data) {

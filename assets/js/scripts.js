@@ -4,10 +4,6 @@
  */
 "use strict";
 
-let _env = "sh";
-
-let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
-
 
 // script
 (function ($) {
@@ -115,7 +111,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
 
             // send request to server
             $.ajax({
-                url: base_url+"/api/search",
+                url: env.baseURL + "/api/search",
                 type: "GET",
                 data: { s: $(this).val() }, // You can pass additional data if needed
                 success: function(data) {
@@ -203,10 +199,8 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
     // close and apply filter (Mobile)
     $(document).on('click', '#btn_set_filters', function () {
         $.ajax({
-            url: base_url + '/api/',
+            url: env.baseURL + '/api/',
             type: 'post',
-            contentType: 'application/json',
-            dataType: 'json',
             data: {
                 filter: filterMobileData,
                 sort: $('#sort_mobile_archive_page li.active a').data('option'),
@@ -230,10 +224,8 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
             filter: filterMobileData,
         })
         $.ajax({
-            url: base_url + '/api/',
+            url: env.baseURL + '/api/',
             type: 'post',
-            contentType: 'application/json',
-            dataType: 'json',
             data: {
                 sort: $(this).data('option'),
                 filter: filterMobileData,
@@ -250,10 +242,8 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
     // send and apply filter in desktop mode
     $(document).on('click', '#btn_desk_set_filters', function () {
         $.ajax({
-            url: base_url + '/api/filter',
+            url: env.baseURL + '/api/filter',
             type: 'post',
-            // contentType: 'application/json',
-            // dataType: 'json',
             data: {
                 filter: filterDesktopData,
                 sort: $('#sort_archive_page').val(),
@@ -270,10 +260,8 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
     // click on load more button in archive page (models list)
     $(document).on('click', '#btn_load_more_models_archive_page', function () {
         $.ajax({
-            url: base_url + '/api/load-more/archive',
+            url: env.baseURL + '/api/load-more/archive',
             type: 'post',
-            // contentType: 'application/json',
-            // dataType: 'json',
             data: {
                 page: $(this).attr('data-page'),
                 filter: filterDesktopData,
@@ -295,10 +283,8 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
     // change sort models in archive page (models list) - Desktop
     $(document).on('change', '#sort_archive_page', function () {
         $.ajax({
-            url: base_url + '/api/filter',
+            url: env.baseURL + '/api/filter',
             type: 'post',
-            // contentType: 'application/json',
-            // dataType: 'json',
             data: {
                 sort: $(this).val(),
                 filter: filterDesktopData,
@@ -315,10 +301,8 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
     // change sort liliana news - (news or news gallery)
     $(document).on('change', '#sort_liliana_news', function () {
         $.ajax({
-            url: base_url + '/api/',
+            url: env.baseURL + '/api/',
             type: 'POST',
-            contentType: 'application/json',
-            dataType: 'json',
             data: $(this).val(),
             success: function (resp) {
                 $('#liliana_news_content').html(resp);
@@ -333,10 +317,8 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
     // click load more liliana news - (news or news gallery)
     $(document).on('click', '#btn_load_more_liliana_news', function () {
         $.ajax({
-            url: base_url + '/api/',
+            url: env.baseURL + '/api/',
             type: 'POST',
-            contentType: 'application/json',
-            dataType: 'json',
             data: {
                 page: $(this).attr('data-page'),
             },
@@ -355,10 +337,8 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
     // change sort member news - (news or news gallery)
     $(document).on('change', '#sort_member_news', function () {
         $.ajax({
-            url: base_url + '/api/',
+            url: env.baseURL + '/api/',
             type: 'POST',
-            contentType: 'application/json',
-            dataType: 'json',
             data: $(this).val(),
             success: function (resp) {
                 $('#member_news_content').html(resp);
@@ -373,10 +353,8 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
     // click load more liliana news - (news or news gallery)
     $(document).on('click', '#btn_load_more_member_news', function () {
         $.ajax({
-            url: base_url + '/api/',
+            url: env.baseURL + '/api/',
             type: 'POST',
-            contentType: 'application/json',
-            dataType: 'json',
             data: {
                 page: $(this).attr('data-page'),
             },
@@ -395,10 +373,8 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
     // click load more result news
     $(document).on('click', '#btn_load_more_result_news', function () {
         $.ajax({
-            url: base_url + '/api/',
+            url: env.baseURL + '/api/',
             type: 'POST',
-            contentType: 'application/json',
-            dataType: 'json',
             data: {
                 page: $(this).attr('data-page'),
                 query: $(this).attr('data-query'),
@@ -750,7 +726,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
         $('header .search-recent .recent-search-section').addClass('disable');
         setTimeout(function(){
             $.ajax({
-                url: base_url + '/api/',
+                url: env.baseURL + '/api/',
                 type: 'POST',
                 contentType: 'application/json',
                 dataType: 'json',
@@ -1075,7 +1051,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
 
         // use filterDesktopData variable in ajax
         $.ajax({
-            url: base_url + '/api/',
+            url: env.baseURL + '/api/',
             type: 'post',
             contentType: 'application/json',
             dataType: 'json',
@@ -1749,7 +1725,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
             clearFocus();
 
             $.ajax({
-                url: "url",
+                url: env.baseURL + "url",
                 type: "POST",
                 data: {
                     name: $('#field_name').val(),
@@ -1850,7 +1826,7 @@ let base_url = (_env == "sh"?"https://liliana.asensive.ir":"");
         $('.post-comment-form').append('<div class="post-comment-loading"><div class="loader-mini"></div></div>');
 
         $.ajax({
-            url: base_url + "/",
+            url: env.baseURL + "/",
             type: "POST",
             data: {
                 name: name,
@@ -2158,7 +2134,7 @@ function createFilterItemsCountryFlag(contentElement, isLanguage = false) {
     if (contentElement.hasClass('items-added')) return false;
 
     new ApiRequest({
-        url: isLanguage? '/api/languages' : '/api/country',
+        url: env.baseURL + (isLanguage? '/api/languages' : '/api/country'),
         success: function (res) {
 
             let namePrefix = contentElement.data('name-prefix');
