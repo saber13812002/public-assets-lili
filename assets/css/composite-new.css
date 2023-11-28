@@ -1,0 +1,184 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@font-face {
+  font-family: 'TheSeasons';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/TheSeasons/TheSeasons.ttf"); }
+
+@font-face {
+  font-family: 'Amelaryas';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Amelaryas/Amelaryas.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Light.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Regular.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Medium.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-SemiBold.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.ttf"); }
+
+@page {
+  size: A4 landscape;
+  margin: 0; }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  background-color: #e2e2e2; }
+
+img,
+table {
+  width: 100%;
+  border-collapse: collapse; }
+img td,
+img tr,
+table td,
+table tr {
+  border: none;
+  padding: 0; }
+
+body {
+  width: 920px;
+  height: 795px;
+  font-size: 14px;
+  line-height: 1.2;
+  margin: auto;
+  padding: 19px 64px 0 64px;
+  background-color: #ffffff;
+  font-family: "Montserrat", sans-serif; }
+
+#header .brand-logo {
+  text-align: right; }
+#header .brand-logo img {
+  height: 62px;
+  width: 114px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-bottom: 6px; }
+
+#header .brand-name table {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content; }
+
+#header .brand-name .name {
+  font-family: 'TheSeasons', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: #000000;
+  padding-right: 11px; }
+
+#header .brand-name #profile_id {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 150%;
+  padding: 3px 6px;
+  text-transform: none;
+  background-color: #F5F5F5;
+  vertical-align: middle; }
+
+#header .brand-name .brand-other-name {
+  font-size: 14px;
+  line-height: 150%;
+  color: #646464; }
+
+.meta {
+  margin: 8px 0; }
+.meta td {
+  font-size: 11px;
+  line-height: 150%;
+  text-align: center;
+  white-space: nowrap;
+  color: #646464;
+  width: 1px; }
+.meta td.first-child {
+  text-align: left; }
+.meta td.last-child {
+  text-align: right; }
+.meta td.divider {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  vertical-align: middle; }
+.meta td.divider div {
+  width: 1px;
+  height: 11px;
+  background-color: #C2C2C2;
+  margin: auto; }
+.meta td strong {
+  color: #000000;
+  font-weight: 500;
+  padding-left: 6px; }
+
+#images > tbody > tr > td {
+  width: 50%; }
+#images > tbody > tr > td.first-child {
+  padding-right: 15px; }
+#images > tbody > tr > td:last-child {
+  padding-left: 15px; }
+
+#images td {
+  line-height: 0; }
+
+#images table tr.first-child td.first-child {
+  padding: 0 5px 5px 0; }
+
+#images table tr.first-child td:last-child {
+  padding: 0 0 7px 7px; }
+
+#images table tr:last-child td.first-child {
+  padding: 7px 7px 0 0; }
+
+#images table tr:last-child td.last-child {
+  padding: 7px 0 0 7px; }
+
+#footer {
+  padding: 0 32px;
+  margin: 8px 0 6px 0; }
+#footer table {
+  margin: 0; }
+#footer table td {
+  font-size: 9px; }
